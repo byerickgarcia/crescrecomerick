@@ -2,17 +2,9 @@
 <html lang="pt-BR">
 <head>
   <meta charset="utf-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover" />
   <title>Erick Garcia — Social Media Premium</title>
   <meta name="description" content="Portfólio focado em escassez, valor e conversão. Case real: +15,2M views (IG), +13M views (TikTok) e monetização em 60 dias." />
-
-  <!-- OG -->
-  <meta property="og:title" content="Erick Garcia — Social Media Premium" />
-  <meta property="og:description" content="Eu escolho poucos clientes. Os que eu escolho, viram referência." />
-  <meta property="og:type" content="website" />
-  <meta property="og:url" content="https://erickgarcia.github.io" />
-  <meta property="og:image" content="erick-profile.png" />
-
   <link rel="icon" href="favicon.ico">
   <link rel="stylesheet" href="styles.css">
 </head>
@@ -21,17 +13,17 @@
   <!-- NAV -->
   <header class="nav">
     <div class="container nav__wrap">
-      <div class="brand">
+      <a class="brand" href="#home">
         <div class="brand__logo">EG</div>
         <span>Erick Garcia</span>
-      </div>
+      </a>
 
       <nav id="menu" class="menu">
         <a href="#home">Início</a>
         <a href="#case">Case</a>
         <a href="#planos">Planos</a>
         <a href="#diferenciais">Diferenciais</a>
-        <a href="#contato" class="btn btn--primary">Aplicar</a>
+        <a href="#contato" class="btn btn--primary btn--small">Aplicar</a>
       </nav>
 
       <button id="hamburger" class="hamburger" aria-label="Abrir menu" aria-controls="menu" aria-expanded="false">
@@ -50,8 +42,8 @@
           <h1>Poucas marcas viram referência.<br><em>As que eu escolho</em> chegam lá.</h1>
           <p>Gestão estratégica + produção premium focadas em crescimento acelerado, autoridade e monetização.</p>
           <div class="cta-row">
-            <a href="#planos" class="btn btn--primary">Ver planos</a>
-            <a href="#case" class="btn btn--ghost">Ver case →</a>
+            <a href="#planos" class="btn btn--primary btn--lg">Ver planos</a>
+            <a href="#case" class="btn btn--ghost btn--lg">Ver case →</a>
           </div>
 
           <div class="stats">
@@ -63,7 +55,7 @@
         </div>
 
         <div class="hero__media card-glow">
-          <img src="erick-profile.png" alt="Erick Garcia" class="hero__img">
+          <img src="https://i.ibb.co/wNSqt4HG/IMG-1308.png" alt="Erick Garcia" class="hero__img" loading="lazy">
           <div class="tag tag--floating">Agenda limitada • seleção de clientes</div>
         </div>
       </div>
@@ -78,6 +70,7 @@
           Virada total: crescimento exponencial em Instagram e TikTok e monetização direta pela plataforma.
         </p>
 
+        <!-- Cards de resultado -->
         <div class="cards-2">
           <div class="card">
             <h3>Instagram</h3>
@@ -99,11 +92,36 @@
           </div>
         </div>
 
-        <div class="gallery">
-          <img src="case-ig-01.jpg" alt="Métricas Instagram">
-          <img src="case-ig-02.jpg" alt="Painel Instagram">
-          <img src="case-tt-01.jpg" alt="Métricas TikTok">
-          <img src="case-tt-02.jpg" alt="Recompensas TikTok">
+        <!-- Carrossel Instagram -->
+        <div class="carousel">
+          <div class="carousel__head">
+            <h3>Provas — Instagram</h3>
+            <div class="carousel__controls">
+              <button class="carousel__btn" data-target="#carousel-ig" data-dir="prev" aria-label="Anterior">‹</button>
+              <button class="carousel__btn" data-target="#carousel-ig" data-dir="next" aria-label="Próximo">›</button>
+            </div>
+          </div>
+          <div id="carousel-ig" class="carousel__track" data-index="0">
+            <div class="carousel__item"><img src="https://i.ibb.co/qYK5Qx8c/instagram-perfil.jpg" alt="Instagram perfil" loading="lazy"></div>
+            <div class="carousel__item"><img src="https://i.ibb.co/B2GG6s9J/instagram-01.jpg" alt="Instagram 01" loading="lazy"></div>
+            <div class="carousel__item"><img src="https://i.ibb.co/kV6Ky0Sb/instagram-02.jpg" alt="Instagram 02" loading="lazy"></div>
+          </div>
+        </div>
+
+        <!-- Carrossel TikTok -->
+        <div class="carousel">
+          <div class="carousel__head">
+            <h3>Provas — TikTok</h3>
+            <div class="carousel__controls">
+              <button class="carousel__btn" data-target="#carousel-tt" data-dir="prev" aria-label="Anterior">‹</button>
+              <button class="carousel__btn" data-target="#carousel-tt" data-dir="next" aria-label="Próximo">›</button>
+            </div>
+          </div>
+          <div id="carousel-tt" class="carousel__track" data-index="0">
+            <div class="carousel__item"><img src="https://i.ibb.co/LdWy8VXK/tiktok-perfil.jpg" alt="TikTok perfil" loading="lazy"></div>
+            <div class="carousel__item"><img src="https://i.ibb.co/rKTSY3KL/tiktok-01.jpg" alt="TikTok 01" loading="lazy"></div>
+            <div class="carousel__item"><img src="https://i.ibb.co/5WVrDxcc/tiktok-02.jpg" alt="TikTok 02" loading="lazy"></div>
+          </div>
         </div>
 
         <p class="quote">“Eu não trabalho com promessas. Eu trabalho com números.”</p>
@@ -131,7 +149,7 @@
               <li>Otimização de legenda & hashtags</li>
               <li>Relatório mensal com próximos passos</li>
             </ul>
-            <a class="btn btn--ghost" target="_blank" href="https://mpago.li/1hCWwDD">Assinar Agora</a>
+            <a class="btn btn--ghost btn--block" target="_blank" href="https://mpago.li/1hCWwDD">Assinar Agora</a>
           </div>
 
           <!-- Performance (popular) -->
@@ -148,7 +166,7 @@
               <li>Edição profissional com cortes virais</li>
               <li>Relatório quinzenal + suporte WhatsApp</li>
             </ul>
-            <a class="btn btn--primary" target="_blank" href="https://mpago.li/2J8oD1b">Assinar Agora</a>
+            <a class="btn btn--primary btn--block" target="_blank" href="https://mpago.li/2J8oD1b">Assinar Agora</a>
           </div>
 
           <!-- Crescimento -->
@@ -165,7 +183,7 @@
               <li>Sessão mensal de fotos (iPhone 16 Pro Max)</li>
               <li>Relatório detalhado com insights acionáveis</li>
             </ul>
-            <a class="btn btn--ghost" target="_blank" href="https://mpago.li/2q2jsyp">Assinar Agora</a>
+            <a class="btn btn--ghost btn--block" target="_blank" href="https://mpago.li/2q2jsyp">Assinar Agora</a>
           </div>
 
           <!-- Autoridade -->
@@ -182,7 +200,7 @@
               <li>Sessão de fotos/vídeos (Canon SL3 + LED)</li>
               <li>Relatório semanal + consultoria de marca</li>
             </ul>
-            <a class="btn btn--ghost" target="_blank" href="https://mpago.li/1GM6r3r">Assinar Agora</a>
+            <a class="btn btn--ghost btn--block" target="_blank" href="https://mpago.li/1GM6r3r">Assinar Agora</a>
           </div>
 
           <!-- Elite (exclusivo) -->
@@ -199,7 +217,7 @@
               <li>Estratégia de crescimento acelerado</li>
               <li>Reuniões semanais + Suporte VIP 24h</li>
             </ul>
-            <a class="btn btn--ghost" target="_blank" href="https://mpago.li/1KPaL1t">Assinar Agora</a>
+            <a class="btn btn--ghost btn--block" target="_blank" href="https://mpago.li/1KPaL1t">Assinar Agora</a>
           </div>
         </div>
 
@@ -231,9 +249,9 @@
       <div class="container">
         <h2>Agenda quase cheia.</h2>
         <p>Eu escolho poucos projetos por mês. Quer ser o próximo?</p>
-        <div class="cta-row">
-          <a class="btn btn--dark" target="_blank" href="https://wa.me/5543988632851">Falar no WhatsApp</a>
-          <a class="btn btn--ghost" href="#planos">Ver planos</a>
+        <div class="cta-row cta-row--center">
+          <a class="btn btn--dark btn--lg" target="_blank" href="https://wa.me/5543988632851">Falar no WhatsApp</a>
+          <a class="btn btn--ghost btn--lg" href="#planos">Ver planos</a>
         </div>
       </div>
     </section>
