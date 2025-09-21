@@ -1,4 +1,4 @@
-// Mobile menu
+// Menu mobile
 const burger = document.getElementById('hamburger');
 const menu = document.getElementById('menu');
 
@@ -10,10 +10,10 @@ if (burger && menu) {
   });
 }
 
-// Atualiza ano no footer
+// Ano no footer
 document.getElementById('year').textContent = new Date().getFullYear();
 
-// Âncoras com scroll suave e fecha menu mobile
+// Rolagem suave e fechar menu no mobile
 document.querySelectorAll('a[href^="#"]').forEach(a => {
   a.addEventListener('click', (e) => {
     const id = a.getAttribute('href');
@@ -27,7 +27,7 @@ document.querySelectorAll('a[href^="#"]').forEach(a => {
   });
 });
 
-// Carrossel, com tamanho menor para foco no conteúdo
+// Carrossel simples com swipe
 function initCarousel(trackId){
   const track = document.querySelector(trackId);
   if (!track) return;
@@ -35,7 +35,7 @@ function initCarousel(trackId){
   const btnPrev = document.querySelector(`[data-target="${trackId}"][data-dir="prev"]`);
   const btnNext = document.querySelector(`[data-target="${trackId}"][data-dir="next"]`);
 
-  const step = () => track.clientWidth * 0.70; // harmônico com CSS
+  const step = () => track.clientWidth * 0.70;
 
   const go = dir => {
     track.scrollBy({ left: dir === 'next' ? step() : -step(), behavior: 'smooth' });
