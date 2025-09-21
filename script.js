@@ -13,7 +13,7 @@ if (burger && menu) {
 // Atualiza ano no footer
 document.getElementById('year').textContent = new Date().getFullYear();
 
-// Âncoras com scroll suave + fecha menu mobile
+// Âncoras com scroll suave e fecha menu mobile
 document.querySelectorAll('a[href^="#"]').forEach(a => {
   a.addEventListener('click', (e) => {
     const id = a.getAttribute('href');
@@ -27,7 +27,7 @@ document.querySelectorAll('a[href^="#"]').forEach(a => {
   });
 });
 
-// Carrossel (Instagram/TikTok)
+// Carrossel, com tamanho menor para foco no conteúdo
 function initCarousel(trackId){
   const track = document.querySelector(trackId);
   if (!track) return;
@@ -35,11 +35,10 @@ function initCarousel(trackId){
   const btnPrev = document.querySelector(`[data-target="${trackId}"][data-dir="prev"]`);
   const btnNext = document.querySelector(`[data-target="${trackId}"][data-dir="next"]`);
 
-  const scrollStep = () => track.clientWidth * 0.88; // igual ao CSS mobile
+  const step = () => track.clientWidth * 0.70; // harmônico com CSS
 
   const go = dir => {
-    const step = scrollStep();
-    track.scrollBy({ left: dir === 'next' ? step : -step, behavior: 'smooth' });
+    track.scrollBy({ left: dir === 'next' ? step() : -step(), behavior: 'smooth' });
   };
 
   btnPrev && btnPrev.addEventListener('click', () => go('prev'));
