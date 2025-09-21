@@ -11,7 +11,8 @@ if (burger && menu) {
 }
 
 // Ano no footer
-document.getElementById('year').textContent = new Date().getFullYear();
+const yearEl = document.getElementById('year');
+if (yearEl) yearEl.textContent = new Date().getFullYear();
 
 // Rolagem suave e fechar menu no mobile
 document.querySelectorAll('a[href^="#"]').forEach(a => {
