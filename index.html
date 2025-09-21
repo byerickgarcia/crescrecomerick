@@ -3,8 +3,11 @@
 <head>
   <meta charset="utf-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover" />
-  <title>Erick Garcia — Social Media Premium</title>
-  <meta name="description" content="Portfólio focado em escassez, valor e conversão. Case real: +15,2M views (IG), +13M views (TikTok) e monetização em 60 dias." />
+  <title>Erick Garcia — Crescimento Acelerado em Redes</title>
+  <meta name="description" content="Gestão estratégica e produção premium para marcas que querem escalar seguidores, autoridade e vendas." />
+
+  <!-- Montserrat -->
+  <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;600;700;800&display=swap" rel="stylesheet">
   <link rel="icon" href="favicon.ico">
   <link rel="stylesheet" href="styles.css">
 </head>
@@ -13,17 +16,20 @@
   <!-- NAV -->
   <header class="nav">
     <div class="container nav__wrap">
-      <a class="brand" href="#home">
-        <div class="brand__logo">EG</div>
-        <span>Erick Garcia</span>
+      <a class="brand" href="#home" aria-label="Ir para início">
+        <img class="brand__avatar" src="https://i.ibb.co/wNSqt4HG/IMG-1308.png" alt="Foto de perfil de Erick Garcia" />
+        <div class="brand__text">
+          <strong>Erick Garcia</strong>
+          <span>Social Media • Foto & Vídeo</span>
+        </div>
       </a>
 
-      <nav id="menu" class="menu">
+      <nav id="menu" class="menu" aria-label="Navegação principal">
         <a href="#home">Início</a>
-        <a href="#case">Case</a>
+        <a href="#case">Resultados</a>
         <a href="#planos">Planos</a>
         <a href="#diferenciais">Diferenciais</a>
-        <a href="#contato" class="btn btn--primary btn--small">Aplicar</a>
+        <a href="#contato" class="btn btn--primary btn--small">Solicitar Proposta</a>
       </nav>
 
       <button id="hamburger" class="hamburger" aria-label="Abrir menu" aria-controls="menu" aria-expanded="false">
@@ -38,25 +44,25 @@
     <section id="home" class="hero">
       <div class="container hero__grid">
         <div class="hero__copy">
-          <span class="pill">Social Media • Fotógrafo • Videomaker</span>
-          <h1>Poucas marcas viram referência.<br><em>As que eu escolho</em> chegam lá.</h1>
-          <p>Gestão estratégica + produção premium focadas em crescimento acelerado, autoridade e monetização.</p>
+          <span class="pill">Gestão de Redes • Conteúdo Premium • Performance</span>
+          <h1>Escalo a sua presença para <em>autoridade e vendas</em>.</h1>
+          <p>Se você quer números reais — alcance, seguidores e clientes — eu cuido da estratégia, produção e performance para acelerar seu crescimento.</p>
           <div class="cta-row">
-            <a href="#planos" class="btn btn--primary btn--lg">Ver planos</a>
-            <a href="#case" class="btn btn--ghost btn--lg">Ver case →</a>
+            <a href="#planos" class="btn btn--primary btn--lg">Ver planos e valores</a>
+            <a href="#case" class="btn btn--ghost btn--lg">Ver provas de resultados →</a>
           </div>
 
           <div class="stats">
-            <div class="stat"><strong>15,2M</strong><span>views (IG)</span></div>
+            <div class="stat"><strong>15,2M</strong><span>views (Instagram)</span></div>
             <div class="stat"><strong>+58k</strong><span>novos seguidores</span></div>
             <div class="stat"><strong>13M</strong><span>views (TikTok)</span></div>
-            <div class="stat"><strong>R$ 3,8k</strong><span>monetização (60d)</span></div>
+            <div class="stat"><strong>R$ 3,8k</strong><span>monetização em 60 dias</span></div>
           </div>
         </div>
 
         <div class="hero__media card-glow">
           <img src="https://i.ibb.co/wNSqt4HG/IMG-1308.png" alt="Erick Garcia" class="hero__img" loading="lazy">
-          <div class="tag tag--floating">Agenda limitada • seleção de clientes</div>
+          <div class="tag tag--floating">Agenda seletiva • vagas limitadas</div>
         </div>
       </div>
     </section>
@@ -64,13 +70,12 @@
     <!-- CASE -->
     <section id="case" class="section">
       <div class="container">
-        <h2>Case de Sucesso</h2>
+        <h2>Resultados que vendem por você</h2>
         <p class="lead">
-          De <b>11 de maio</b> a <b>20 de setembro de 2025</b>, assumi a gestão completa de um cliente.
-          Virada total: crescimento exponencial em Instagram e TikTok e monetização direta pela plataforma.
+          Entre <b>11 de maio</b> e <b>20 de setembro de 2025</b>, assumi a gestão completa de um cliente.
+          O perfil saiu da estagnação para uma máquina de alcance, engajamento e monetização.
         </p>
 
-        <!-- Cards de resultado -->
         <div class="cards-2">
           <div class="card">
             <h3>Instagram</h3>
@@ -124,7 +129,7 @@
           </div>
         </div>
 
-        <p class="quote">“Eu não trabalho com promessas. Eu trabalho com números.”</p>
+        <p class="quote">“Eu não prometo. Eu entrego números e resultado.”</p>
       </div>
     </section>
 
@@ -132,7 +137,7 @@
     <section id="planos" class="section section--alt">
       <div class="container">
         <h2>Planos com vagas limitadas</h2>
-        <p class="lead">Eu seleciono poucos clientes por vez para manter a qualidade e a velocidade de execução.</p>
+        <p class="lead">Escolho poucos clientes para manter qualidade, velocidade e foco em resultado.</p>
 
         <div class="plans">
           <!-- Start -->
@@ -141,12 +146,12 @@
               <span class="badge">Entrada Segura</span>
               <h3>Start</h3>
               <div class="price">R$ 2.000<span>/mês</span></div>
-              <p class="tagline">Para começar do jeito certo</p>
+              <p class="tagline">Comece com estratégia e consistência</p>
             </div>
             <ul class="bullets">
               <li>Gestão de 1 rede (IG ou TikTok)</li>
               <li>8–10 posts/mês (feed ou reels)</li>
-              <li>Otimização de legenda & hashtags</li>
+              <li>Otimização de legendas & hashtags</li>
               <li>Relatório mensal com próximos passos</li>
             </ul>
             <a class="btn btn--ghost btn--block" target="_blank" href="https://mpago.li/1hCWwDD">Assinar Agora</a>
@@ -158,12 +163,12 @@
               <span class="badge badge--hot">Mais Popular</span>
               <h3>Performance</h3>
               <div class="price">R$ 3.000<span>/mês</span></div>
-              <p class="tagline">Equilíbrio perfeito entre custo e resultado</p>
+              <p class="tagline">Custo x resultado imbatível</p>
             </div>
             <ul class="bullets">
               <li>Até 2 redes (IG + TikTok)</li>
               <li>12–14 posts/mês (feed, reels, stories)</li>
-              <li>Edição profissional com cortes virais</li>
+              <li>Edição com cortes virais</li>
               <li>Relatório quinzenal + suporte WhatsApp</li>
             </ul>
             <a class="btn btn--primary btn--block" target="_blank" href="https://mpago.li/2J8oD1b">Assinar Agora</a>
@@ -175,7 +180,7 @@
               <span class="badge">Alavanca</span>
               <h3>Crescimento</h3>
               <div class="price">R$ 4.000<span>/mês</span></div>
-              <p class="tagline">Aceleração real</p>
+              <p class="tagline">Aceleração para disputar liderança</p>
             </div>
             <ul class="bullets">
               <li>Até 2 redes</li>
@@ -192,7 +197,7 @@
               <span class="badge">Recomendado</span>
               <h3>Autoridade</h3>
               <div class="price">R$ 5.000<span>/mês</span></div>
-              <p class="tagline">Posicionamento de líder</p>
+              <p class="tagline">Posicionamento de líder no nicho</p>
             </div>
             <ul class="bullets">
               <li>Até 3 redes</li>
@@ -209,7 +214,7 @@
               <span class="badge badge--gold">Exclusivo</span>
               <h3>Elite</h3>
               <div class="price">R$ 7.500<span>/mês</span></div>
-              <p class="tagline">Vagas extremamente limitadas</p>
+              <p class="tagline">Atendimento premium • vagas raras</p>
             </div>
             <ul class="bullets">
               <li>Até 4 redes + YouTube Shorts</li>
@@ -221,15 +226,15 @@
           </div>
         </div>
 
-        <p class="note">*Plano Elite com vagas <b>extremamente limitadas</b>. Sujeito à aprovação.</p>
+        <p class="note">*Atendo poucos clientes por vez. Fechamento sujeito à aprovação.</p>
       </div>
     </section>
 
     <!-- DIFERENCIAIS -->
     <section id="diferenciais" class="section">
       <div class="container">
-        <h2>O que me diferencia</h2>
-        <p class="lead">Não entrego “posts”. Entrego <b>estratégia, crescimento e autoridade</b>.</p>
+        <h2>Por que fechar comigo</h2>
+        <p class="lead">Não vendo “post”. Vendo <b>crescimento previsível</b> com produção e estratégia.</p>
 
         <div class="features">
           <div class="feature">📱 iPhone 16 Pro Max</div>
@@ -239,7 +244,7 @@
           <div class="feature">🎨 Lightroom CC & Classic</div>
           <div class="feature">🎬 CapCut Pro</div>
           <div class="feature">🖼️ Canva Pro</div>
-          <div class="feature">⚡ Workflow acelerado</div>
+          <div class="feature">⚡ Workflow rápido e consistente</div>
         </div>
       </div>
     </section>
@@ -247,8 +252,8 @@
     <!-- CONTATO / CTA -->
     <section id="contato" class="cta">
       <div class="container">
-        <h2>Agenda quase cheia.</h2>
-        <p>Eu escolho poucos projetos por mês. Quer ser o próximo?</p>
+        <h2>Quer ser o próximo case?</h2>
+        <p>Falo com poucos por mês. Se sua marca está pronta para escalar, vamos conversar agora.</p>
         <div class="cta-row cta-row--center">
           <a class="btn btn--dark btn--lg" target="_blank" href="https://wa.me/5543988632851">Falar no WhatsApp</a>
           <a class="btn btn--ghost btn--lg" href="#planos">Ver planos</a>
