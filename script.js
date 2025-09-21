@@ -27,17 +27,15 @@ document.querySelectorAll('a[href^="#"]').forEach(a => {
   });
 });
 
-// Carrossel básico (Instagram/TikTok)
+// Carrossel (Instagram/TikTok)
 function initCarousel(trackId){
   const track = document.querySelector(trackId);
   if (!track) return;
 
   const btnPrev = document.querySelector(`[data-target="${trackId}"][data-dir="prev"]`);
   const btnNext = document.querySelector(`[data-target="${trackId}"][data-dir="next"]`);
-  const items = track.querySelectorAll('.carousel__item');
 
-  // garante largura correta ao redimensionar
-  const scrollStep = () => track.clientWidth * 0.88; // mesmo % do CSS mobile
+  const scrollStep = () => track.clientWidth * 0.88; // igual ao CSS mobile
 
   const go = dir => {
     const step = scrollStep();
@@ -47,7 +45,7 @@ function initCarousel(trackId){
   btnPrev && btnPrev.addEventListener('click', () => go('prev'));
   btnNext && btnNext.addEventListener('click', () => go('next'));
 
-  // swipe touch
+  // Swipe touch
   let startX = 0;
   track.addEventListener('touchstart', (e) => { startX = e.touches[0].clientX; }, { passive:true });
   track.addEventListener('touchend', (e) => {
