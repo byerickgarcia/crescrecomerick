@@ -90,13 +90,9 @@ h2{font-size:clamp(1.6rem,2.4vw,2.4rem);letter-spacing:-.02em}
 .carousel--proof .carousel__item img{width:100%;height:auto;max-height:var(--proof-max);object-fit:contain;background:#000;border-radius:8px}
 .carousel--proof .carousel__btn{width:36px;height:36px;font-size:20px}
 
-/* Builder */
+/* Builder layout */
 .builder{margin-top:18px}
 .builder__grid{display:grid;grid-template-columns:2fr 2fr 2fr 1.4fr;gap:16px}
-.chips{display:flex;flex-wrap:wrap;gap:10px;margin-top:10px}
-.chip{display:inline-flex;align-items:center;gap:8px;border:1px solid var(--border);background:rgba(255,255,255,.04);color:#fff;padding:8px 12px;border-radius:999px;cursor:pointer;user-select:none}
-.chip input{display:none}
-.chip input:checked + span{filter:brightness(1.15)}
 .num{display:block;margin:12px 0}
 .num span{display:block;margin-bottom:8px;color:#dbe6ff}
 .sel select, .txt textarea, .num input[type="number"]{
@@ -113,6 +109,31 @@ h2{font-size:clamp(1.6rem,2.4vw,2.4rem);letter-spacing:-.02em}
 .stepper button:active{transform:scale(.98)}
 .card--accent{outline:2px solid rgba(124,77,255,.6);box-shadow:0 0 0 3px rgba(124,77,255,.18) inset}
 .builder__summary{display:flex;flex-direction:column;gap:10px;position:sticky;top:88px;height:max-content}
+.hint{color:#c9d8ff;font-size:12px;margin-top:6px}
+
+/* ==== Chips de seleção (UX melhorado) ==== */
+.chips{display:flex;flex-wrap:wrap;gap:10px;margin-top:12px}
+.chip{
+  position:relative; display:inline-flex; align-items:center;
+  border:1px solid var(--border); background:rgba(255,255,255,.05);
+  color:#eaf0ff; padding:10px 14px; border-radius:999px; cursor:pointer;
+  user-select:none; transition:.18s ease; outline:0;
+}
+.chip:hover{filter:brightness(1.05)}
+.chip:focus-visible{box-shadow:0 0 0 3px rgba(124,77,255,.35)}
+.chip input{position:absolute; inset:0; opacity:0; pointer-events:none}
+.chip__content{display:inline-flex; align-items:center; gap:8px}
+.chip__check{opacity:0; transform:scale(.7); transition:.18s ease; color:#0a1329}
+
+/* Estado marcado — :has + fallback por classe .is-checked */
+.chip:has(input:checked),
+.chip.is-checked{
+  background:linear-gradient(135deg, var(--accent), var(--accent-2));
+  border-color:transparent; color:#0a1329;
+  box-shadow:0 6px 20px rgba(0,224,184,.24);
+}
+.chip:has(input:checked) .chip__check,
+.chip.is-checked .chip__check{opacity:1; transform:scale(1)}
 
 /* Notices e Policies */
 .notice{background:linear-gradient(135deg,rgba(124,77,255,.18),rgba(0,224,184,.18));border:1px solid var(--border);border-radius:14px;padding:14px 16px;color:#e6edff;margin-top:16px}
