@@ -1,196 +1,353 @@
-<!DOCTYPE html>
-<html lang="pt-br">
+<!doctype html>
+<html lang="pt-BR">
 <head>
   <meta charset="utf-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1" />
-  <title>byErickGarcia | Fotografia de Festas, Infantil & Retratos</title>
-  <meta name="description" content="Fotografia para famílias e pessoas. Portfólio real e plano 100% personalizado. Todas as fotos boas tratadas — sem limite." />
-  <link rel="preconnect" href="https://fonts.googleapis.com">
-  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600;800&family=Inter:wght@400;600&display=swap" rel="stylesheet">
-  <link rel="stylesheet" href="styles.css" />
-  <meta property="og:title" content="byErickGarcia | Fotografia para famílias e pessoas">
-  <meta property="og:description" content="Todas as fotos boas tratadas — sem limite. Monte seu plano e receba no WhatsApp.">
-  <meta property="og:image" content="https://i.ibb.co/hFDLw7Fq/Design-sem-nome.png">
-  <link rel="icon" href="https://i.ibb.co/hFDLw7Fq/Design-sem-nome.png">
+  <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover" />
+  <title>Erick Garcia | Operação de Conteúdo que Cresce Marca e Vendas</title>
+  <meta name="description" content="Operação completa de social para Instagram, TikTok e YouTube. Captação, edição, fotos e gestão com foco em audiência, autoridade e vendas. Agenda limitada." />
+  <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;600;700;800&display=swap" rel="stylesheet">
+  <link rel="icon" href="favicon.ico">
+  <link rel="stylesheet" href="styles.css">
 </head>
 <body>
+
   <!-- NAV -->
-  <header class="nav" id="topo">
-    <div class="container nav__inner">
-      <a class="brand" href="#home" aria-label="Início">
-        <img class="avatar" src="https://i.ibb.co/hFDLw7Fq/Design-sem-nome.png" alt="byErickGarcia — foto de perfil" />
+  <header class="nav">
+    <div class="container nav__wrap">
+      <a class="brand" href="#home" aria-label="Ir para início">
+        <img class="brand__avatar" src="https://i.ibb.co/wNSqt4HG/IMG-1308.png" alt="Foto de perfil de Erick Garcia" />
         <div class="brand__text">
-          <strong>byErickGarcia</strong>
-          <span>Fotógrafo</span>
+          <strong>Erick Garcia</strong>
+          <span>Social Media  Foto  Vídeo</span>
         </div>
       </a>
 
-      <button class="hamb" id="hamb" aria-label="Abrir menu" aria-expanded="false">
+      <nav id="menu" class="menu" aria-label="Navegação principal">
+        <a href="#home">Início</a>
+        <a href="#case">Resultados</a>
+        <a href="#solucoes">Sob Medida</a>
+        <a href="#processo">Processo</a>
+        <a href="#politicas">Políticas</a>
+        <a class="btn btn--primary btn--small" target="_blank"
+           href="https://wa.me/5543988632851?text=Ola%20Erick%2C%20quero%20montar%20um%20escopo%20sob%20medida%20para%20minha%20marca.">
+          Falar no WhatsApp
+        </a>
+      </nav>
+
+      <button id="hamburger" class="hamburger" aria-label="Abrir menu" aria-controls="menu" aria-expanded="false">
         <span></span><span></span><span></span>
       </button>
-
-      <nav id="menu" class="menu">
-        <a href="#portfolio">Portfólio</a>
-        <a href="#personalizado">Plano Personalizado</a>
-        <a href="#contato" class="btn btn--sm">Falar no WhatsApp</a>
-      </nav>
     </div>
   </header>
 
-  <!-- HERO -->
-  <main id="home" tabindex="-1">
-    <section class="hero">
+  <main>
+
+    <!-- HERO -->
+    <section id="home" class="hero">
       <div class="container hero__grid">
-        <div class="hero__text">
-          <h1>Momentos da sua família <span class="hl">com presença, emoção e acabamento premium.</span></h1>
-          <p>
-            Eu fotografo com foco total na sua história e você recebe
-            <strong>todas as fotos boas tratadas — sem limite</strong>, em alta e web, no prazo combinado.
-          </p>
-          <ul class="bullets">
-            <li>Portfólio real: todas as fotos abaixo foram feitas por mim</li>
-            <li>Prazos definidos em contrato + atendimento rápido</li>
-            <li>Entrega organizada e segura</li>
-          </ul>
-          <div class="hero__cta">
-            <a href="#personalizado" class="btn">Montar meu plano agora</a>
-            <a href="#portfolio" class="btn btn--ghost">Ver portfólio</a>
+        <div class="hero__copy">
+          <span class="pill">Audiência  Autoridade  Vendas</span>
+          <h1>Conteúdo que transforma atenção em crescimento real.</h1>
+          <p>Operação completa de social. Captação, edição, fotos e gestão com estratégia clara e execução consistente. Agenda seletiva para garantir padrão alto.</p>
+          <div class="cta-row">
+            <a href="#solucoes" class="btn btn--primary btn--lg">Montar escopo</a>
+            <a href="#case" class="btn btn--ghost btn--lg">Ver resultados</a>
           </div>
-          <p class="payline">Pagamento: <strong>50% no contrato</strong> + <strong>50% na entrega das fotos</strong>.</p>
+
+          <div class="stats">
+            <div class="stat"><strong>15,2M</strong><span>visualizações no Instagram</span></div>
+            <div class="stat"><strong>+58k</strong><span>novos seguidores</span></div>
+            <div class="stat"><strong>13M</strong><span>visualizações no TikTok</span></div>
+            <div class="stat"><strong>R$ 3,8k</strong><span>monetização em 60 dias</span></div>
+          </div>
         </div>
-        <div class="hero__cover">
-          <img src="https://i.ibb.co/hFDLw7Fq/Design-sem-nome.png" alt="Erick Garcia — Fotógrafo" />
+
+        <div class="hero__media card-glow">
+          <img src="https://i.ibb.co/wNSqt4HG/IMG-1308.png" alt="Erick Garcia" class="hero__img" loading="lazy">
+          <div class="tag tag--floating">Agenda limitada  até 3 clientes</div>
         </div>
       </div>
     </section>
 
-    <!-- PORTFÓLIO -->
-    <section id="portfolio" class="container section">
-      <div class="section__head">
-        <h2>Portfólio</h2>
-        <p class="muted">Toque nas imagens para ampliar.</p>
-      </div>
+    <!-- CASE -->
+    <section id="case" class="section">
+      <div class="container">
+        <h2>Resultados comprovados</h2>
+        <p class="lead">
+          Entre 11 de maio e 20 de setembro de 2025 conduzi a operação de social de um cliente e converti presença em números que geram negócio.
+        </p>
 
-      <div class="grid grid--portfolio">
-        <figure class="shot"><img data-full="https://i.ibb.co/7JSbCqDG/IMG-0491.jpg" src="https://i.ibb.co/7JSbCqDG/IMG-0491.jpg" alt=""></figure>
-        <figure class="shot"><img data-full="https://i.ibb.co/QqWD1yT/IMG-0382.jpg" src="https://i.ibb.co/QqWD1yT/IMG-0382.jpg" alt=""></figure>
-        <figure class="shot"><img data-full="https://i.ibb.co/C3w2PCbQ/IMG-0396.jpg" src="https://i.ibb.co/C3w2PCbQ/IMG-0396.jpg" alt=""></figure>
-        <figure class="shot"><img data-full="https://i.ibb.co/8DwYRkkj/IMG-0486.jpg" src="https://i.ibb.co/8DwYRkkj/IMG-0486.jpg" alt=""></figure>
-        <figure class="shot"><img data-full="https://i.ibb.co/d0PMjbnJ/IMG-0412.jpg" src="https://i.ibb.co/d0PMjbnJ/IMG-0412.jpg" alt=""></figure>
-        <figure class="shot"><img data-full="https://i.ibb.co/VWyYnbmx/IMG-0385.jpg" src="https://i.ibb.co/VWyYnbmx/IMG-0385.jpg" alt=""></figure>
-      </div>
+        <div class="cards-2">
+          <div class="card">
+            <h3>Instagram</h3>
+            <ul class="bullets">
+              <li>Seguidores  56k → 114k</li>
+              <li>Visualizações  15,2M</li>
+              <li>Interações  1,3M</li>
+              <li>Alcance  3,6M</li>
+            </ul>
+          </div>
+          <div class="card">
+            <h3>TikTok</h3>
+            <ul class="bullets">
+              <li>Seguidores  4k → 83,9k</li>
+              <li>Visualizações  13M</li>
+              <li>Curtidas  1,5M  Compartilhamentos  147k</li>
+              <li>Monetização em 60 dias  R$ 3.848,21</li>
+            </ul>
+          </div>
+        </div>
 
-      <!-- Lightbox -->
-      <div id="lightbox" class="lightbox" aria-hidden="true" style="display:none">
-        <button class="lightbox__close" aria-label="Fechar">&times;</button>
-        <img id="lightboxImg" alt="">
+        <!-- Carrossel Instagram -->
+        <div class="carousel carousel--proof">
+          <div class="carousel__head">
+            <h3>Provas Instagram</h3>
+            <div class="carousel__controls">
+              <button class="carousel__btn" data-target="#carousel-ig" data-dir="prev" aria-label="Anterior">‹</button>
+              <button class="carousel__btn" data-target="#carousel-ig" data-dir="next" aria-label="Próximo">›</button>
+            </div>
+          </div>
+          <div id="carousel-ig" class="carousel__track" data-index="0">
+            <div class="carousel__item"><img src="https://i.ibb.co/qYK5Qx8c/instagram-perfil.jpg" alt="Instagram perfil" loading="lazy"></div>
+            <div class="carousel__item"><img src="https://i.ibb.co/B2GG6s9J/instagram-01.jpg" alt="Instagram 01" loading="lazy"></div>
+            <div class="carousel__item"><img src="https://i.ibb.co/kV6Ky0Sb/instagram-02.jpg" alt="Instagram 02" loading="lazy"></div>
+          </div>
+        </div>
+
+        <!-- Carrossel TikTok -->
+        <div class="carousel carousel--proof">
+          <div class="carousel__head">
+            <h3>Provas TikTok</h3>
+            <div class="carousel__controls">
+              <button class="carousel__btn" data-target="#carousel-tt" data-dir="prev" aria-label="Anterior">‹</button>
+              <button class="carousel__btn" data-target="#carousel-tt" data-dir="next" aria-label="Próximo">›</button>
+            </div>
+          </div>
+          <div id="carousel-tt" class="carousel__track" data-index="0">
+            <div class="carousel__item"><img src="https://i.ibb.co/LdWy8VXK/tiktok-perfil.jpg" alt="TikTok perfil" loading="lazy"></div>
+            <div class="carousel__item"><img src="https://i.ibb.co/rKTSY3KL/tiktok-01.jpg" alt="TikTok 01" loading="lazy"></div>
+            <div class="carousel__item"><img src="https://i.ibb.co/5WVrDxcc/tiktok-02.jpg" alt="TikTok 02" loading="lazy"></div>
+          </div>
+        </div>
+
+        <p class="quote">Operação  consistência  criatividade. A combinação que move números e negócios.</p>
+      </div>
+    </section>
+
+    <!-- SOLUÇÕES SOB MEDIDA -->
+    <section id="solucoes" class="section section--alt">
+      <div class="container">
+        <h2>Monte seu escopo sob medida</h2>
+        <p class="lead">Selecione canais e volume. Eu retorno com proposta e cronograma. Simples e objetivo.</p>
+
+        <div class="builder">
+          <form id="builderForm" class="builder__grid" onsubmit="return false;">
+            <!-- Canais -->
+            <div class="card">
+              <h3>Canais</h3>
+              <div class="chips" role="group" aria-label="Seleção de canais">
+                <label class="chip">
+                  <input type="checkbox" name="ig" checked>
+                  <span>Instagram</span>
+                </label>
+                <label class="chip">
+                  <input type="checkbox" name="tt">
+                  <span>TikTok</span>
+                </label>
+                <label class="chip">
+                  <input type="checkbox" name="yt">
+                  <span>YouTube vídeo longo</span>
+                </label>
+                <label class="chip">
+                  <input type="checkbox" name="shorts">
+                  <span>YouTube Shorts</span>
+                </label>
+              </div>
+              <p class="hint">Instagram ativo por padrão. TikTok e Shorts ampliam alcance e prova social.</p>
+            </div>
+
+            <!-- Volume por semana -->
+            <div class="card">
+              <h3>Volume por semana</h3>
+
+              <label class="num">
+                <span>Reels ou cortes por semana</span>
+                <div class="stepper">
+                  <button type="button" data-step="reels" data-dir="-">−</button>
+                  <input type="number" name="reelsWeek" min="0" step="1" value="7" inputmode="numeric" pattern="[0-9]*" aria-label="Reels por semana">
+                  <button type="button" data-step="reels" data-dir="+">+</button>
+                </div>
+              </label>
+
+              <label class="num">
+                <span>Posts de feed por semana</span>
+                <div class="stepper">
+                  <button type="button" data-step="posts" data-dir="-">−</button>
+                  <input type="number" name="postsWeek" min="0" step="1" value="7" inputmode="numeric" pattern="[0-9]*" aria-label="Posts por semana">
+                  <button type="button" data-step="posts" data-dir="+">+</button>
+                </div>
+              </label>
+
+              <label class="num">
+                <span>Stories por semana</span>
+                <div class="stepper">
+                  <button type="button" data-step="stories" data-dir="-">−</button>
+                  <input type="number" name="storiesWeek" min="0" step="1" value="14" inputmode="numeric" pattern="[0-9]*" aria-label="Stories por semana">
+                  <button type="button" data-step="stories" data-dir="+">+</button>
+                </div>
+              </label>
+
+              <p class="hint">Use os botões ou digite. Sem limite máximo.</p>
+            </div>
+
+            <!-- Captação e Fotos por mês -->
+            <div class="card">
+              <h3>Captação e fotos no mês</h3>
+
+              <label class="num">
+                <span>Visitas de captação no mês</span>
+                <div class="stepper">
+                  <button type="button" data-step="visits" data-dir="-">−</button>
+                  <input type="number" name="visitsMonth" min="0" step="1" value="2" inputmode="numeric" pattern="[0-9]*" aria-label="Visitas por mês">
+                  <button type="button" data-step="visits" data-dir="+">+</button>
+                </div>
+              </label>
+
+              <label class="num">
+                <span>Fotos tratadas no mês</span>
+                <div class="stepper">
+                  <button type="button" data-step="photos" data-dir="-">−</button>
+                  <input type="number" name="photosMonth" min="0" step="1" value="20" inputmode="numeric" pattern="[0-9]*" aria-label="Fotos por mês">
+                  <button type="button" data-step="photos" data-dir="+">+</button>
+                </div>
+              </label>
+
+              <p class="hint">Canon SL3 e iPhone 16 Pro Max com luz dedicada. Estética consistente para feed e capas.</p>
+            </div>
+
+            <!-- Preferências -->
+            <div class="card">
+              <h3>Preferências</h3>
+              <label class="sel">
+                Linha editorial
+                <select name="editorial" aria-label="Linha editorial">
+                  <option value="institucional">Institucional</option>
+                  <option value="ofertas">Ofertas e comercial</option>
+                  <option value="autoridade" selected>Autoridade e conteúdo</option>
+                  <option value="eventos">Eventos e agenda</option>
+                </select>
+              </label>
+
+              <label class="sel">
+                Qualidade de edição
+                <select name="quality" aria-label="Qualidade de edição">
+                  <option value="basica">Básica</option>
+                  <option value="intermediaria" selected>Intermediária</option>
+                  <option value="premium">Premium</option>
+                </select>
+              </label>
+
+              <label class="txt">
+                Observações ou links
+                <textarea name="notes" rows="4" placeholder="Exemplos  horários preferidos  referências  links de vídeos brutos  temas de campanha"></textarea>
+              </label>
+            </div>
+
+            <!-- Resumo e WhatsApp -->
+            <aside class="card card--accent builder__summary">
+              <h3>Resumo do escopo</h3>
+              <ul class="bullets sm" id="bulletsResumo"></ul>
+              <button id="btnWhats" type="button" class="btn btn--dark btn--block">
+                Enviar escopo no WhatsApp
+              </button>
+              <p class="tiny">Retorno com proposta e cronograma. Contrato mensal  50 por cento na assinatura e 50 por cento no vencimento.</p>
+            </aside>
+          </form>
+        </div>
+
+        <div class="notice">
+          <strong>Foco em resultado.</strong> Retenção de vídeo, prova social e cliques que viram negócio. Escopo moldado pela meta da marca.
+        </div>
       </div>
     </section>
 
-    <!-- PLANO PERSONALIZADO -->
-    <section id="personalizado" class="container section">
-      <div class="section__head">
-        <h2>Monte seu plano personalizado</h2>
-        <p class="muted">Cada evento é único. Escolha o que faz sentido, me envie no WhatsApp e eu retorno com o valor fechado.</p>
-      </div>
-
-      <form id="formPlano" class="form" novalidate>
-        <div class="row">
-          <label>O que vamos fotografar?
-            <select name="tipo" required>
-              <option value="Festa infantil" selected>Festa infantil</option>
-              <option value="Aniversário">Aniversário</option>
-              <option value="15 anos">15 anos</option>
-              <option value="Batizado">Batizado</option>
-              <option value="Retratos / Ensaio">Retratos / Ensaio</option>
-              <option value="Outro">Outro</option>
-            </select>
-          </label>
-          <label>Data desejada
-            <input type="date" name="data" required>
-          </label>
+    <!-- PROCESSO -->
+    <section id="processo" class="section">
+      <div class="container">
+        <h2>Processo para reduzir atrito e acelerar entrega</h2>
+        <div class="cards-4">
+          <div class="card">
+            <h3>1  Diagnóstico</h3>
+            <p>Meta, funil, persona e ofertas. Defino tom de voz e calendário.</p>
+          </div>
+          <div class="card">
+            <h3>2  Captação</h3>
+            <p>Roteiros objetivos e captação ágil. Vídeo e foto com estética da marca.</p>
+          </div>
+          <div class="card">
+            <h3>3  Produção</h3>
+            <p>Cortes de retenção, capas que clicam e copy que converte.</p>
+          </div>
+          <div class="card">
+            <h3>4  Publicação e performance</h3>
+            <p>Programação, distribuição por canal e ajustes semanais com dados.</p>
+          </div>
         </div>
-
-        <div class="row">
-          <label>Duração da cobertura
-            <select name="duracao" required>
-              <option value="Até 2 horas">Até 2 horas</option>
-              <option value="Até 3 horas">Até 3 horas</option>
-              <option value="Até 4 horas">Até 4 horas</option>
-              <option value="Até 6 horas">Até 6 horas</option>
-              <option value="Até o final da festa">Até o final da festa</option>
-            </select>
-          </label>
-          <label>Mínimo de fotos que você espera
-            <input type="number" min="0" name="minFotos" placeholder="Ex.: 240" />
-            <small class="hint">Obs.: eu entrego todas as fotos boas, sem limite. Este campo é só para alinhamento de expectativa.</small>
-          </label>
-        </div>
-
-        <div class="row">
-          <label>Clipes curtos (15–30s) — quantidade
-            <input type="number" min="0" value="0" name="clips" inputmode="numeric">
-          </label>
-          <label class="check single">
-            <input type="checkbox" name="making"> Incluir making of compacto (1–2 min)
-          </label>
-        </div>
-
-        <div class="row row--checks">
-          <label class="check"><input type="checkbox" name="album"> Álbum impresso 20×20 (20 páginas)</label>
-          <label class="check"><input type="checkbox" name="assistente"> Segundo fotógrafo/assistente</label>
-          <label class="check"><input type="checkbox" name="express"> Entrega expressa de fotos</label>
-        </div>
-
-        <div class="row">
-          <label>Local / Bairro
-            <input type="text" name="local" placeholder="Onde será?">
-          </label>
-          <label>Km fora de Ibiporã (se tiver)
-            <input type="number" min="0" name="km" value="0" inputmode="numeric">
-          </label>
-        </div>
-
-        <div class="row">
-          <label>Seu nome
-            <input type="text" name="nome" placeholder="Seu nome" required>
-          </label>
-          <label>WhatsApp (opcional)
-            <input type="tel" name="zap" placeholder="(DDD) 9 9999-9999">
-          </label>
-        </div>
-
-        <label>Detalhes que importam
-          <textarea name="detalhes" rows="4" placeholder="Tema, nº de convidados, horários-chave, preferências..."></textarea>
-        </label>
-
-        <button type="submit" class="btn btn--block">Enviar meu plano no WhatsApp</button>
-        <p class="muted center">Resposta rápida. Pagamento: 50% no contrato + 50% na entrega das fotos.</p>
-      </form>
-    </section>
-
-    <!-- CONTATO RÁPIDO -->
-    <section id="contato" class="container section">
-      <div class="form mini">
-        <h3>Quer falar direto comigo?</h3>
-        <a class="btn btn--block" id="btnZapDireto" href="#">Chamar no WhatsApp</a>
       </div>
     </section>
+
+    <!-- POLÍTICAS -->
+    <section id="politicas" class="section">
+      <div class="container">
+        <h2>Políticas e agenda</h2>
+        <div class="policies">
+          <div class="card">
+            <h3>Agenda</h3>
+            <ul class="bullets">
+              <li>Até 3 clientes simultâneos</li>
+              <li>Qualidade e velocidade acima de volume</li>
+            </ul>
+          </div>
+          <div class="card">
+            <h3>Contrato e pagamento</h3>
+            <ul class="bullets">
+              <li>Contrato mensal</li>
+              <li>50 por cento na assinatura  50 por cento no vencimento</li>
+              <li>Pix ou transferência</li>
+            </ul>
+          </div>
+          <div class="card">
+            <h3>Operação</h3>
+            <ul class="bullets">
+              <li>Quando não há visita sua equipe envia brutos e mantenho o fluxo</li>
+              <li>Calendário e pauta com antecedência</li>
+              <li>Revisões objetivas por peça</li>
+            </ul>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- CTA -->
+    <section id="contato" class="cta">
+      <div class="container">
+        <h2>Pronto para escalar presença e vendas</h2>
+        <p>Me chame no WhatsApp e montamos seu escopo em poucos minutos.</p>
+        <div class="cta-row cta-row--center">
+          <a class="btn btn--dark btn--lg" target="_blank" href="https://wa.me/5543988632851">Falar no WhatsApp</a>
+          <a class="btn btn--ghost btn--lg" href="#solucoes">Montar escopo</a>
+        </div>
+      </div>
+    </section>
+
   </main>
 
-  <!-- FOOTER -->
   <footer class="footer">
-    <div class="container footer__inner">
-      <p>© <span id="year"></span> byErickGarcia — Ibiporã & Londrina</p>
-      <a href="#topo" class="to-top" aria-label="Voltar ao topo">↑ Topo</a>
+    <div class="container">
+      © <span id="year"></span> Erick Garcia. Todos os direitos reservados.
     </div>
   </footer>
 
-  <script>
-    /* Número do WhatsApp em formato E.164 (só dígitos) */
-    window.WHATSAPP_NUMBER = "5543988632851";
-  </script>
   <script src="script.js"></script>
 </body>
 </html>
