@@ -1,377 +1,326 @@
-<!doctype html>
+<!DOCTYPE html>
 <html lang="pt-BR">
 <head>
-  <meta charset="utf-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover" />
-  <title>Erick Garcia | Operação de Conteúdo que Cresce Marca e Vendas</title>
-  <meta name="description" content="Operação completa de social para Instagram, TikTok e YouTube. Captação, edição, fotos e gestão com foco em audiência, autoridade e vendas. Agenda limitada." />
-  <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;600;700;800&display=swap" rel="stylesheet">
-  <link rel="icon" href="favicon.ico">
-  <link rel="stylesheet" href="styles.css">
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Erick Garcia | Social Media, Fotógrafo e Videomaker de Alto Impacto</title>
+    <style>
+        /* Estilos CSS simplificados e responsivos (Mobile-First) */
+        :root {
+            --primary-color: #ff5722; /* Laranja/Cobre - Cor de alto valor e energia */
+            --secondary-color: #00bcd4; /* Ciano/Turquesa - Profissionalismo e Inovação */
+            --dark-bg: #111111;
+            --light-text: #f8f8f8;
+            --card-bg: #1a1a1a;
+        }
+
+        body {
+            font-family: 'Poppins', sans-serif; /* Adotando uma fonte moderna (Simulação) */
+            margin: 0;
+            padding: 0;
+            background-color: var(--dark-bg);
+            color: var(--light-text);
+            line-height: 1.6;
+            overflow-x: hidden;
+        }
+
+        .container {
+            max-width: 1100px;
+            margin: 0 auto;
+            padding: 0 15px;
+        }
+
+        header {
+            text-align: center;
+            padding: 40px 0 20px 0;
+            background: #000;
+        }
+
+        h1, h2, h3 {
+            font-weight: 800;
+            line-height: 1.2;
+            margin-top: 0;
+        }
+
+        h1 {
+            font-size: 2rem;
+            color: var(--light-text);
+            margin-bottom: 5px;
+        }
+        
+        /* Destaque para Palavras Chave */
+        .highlight {
+            color: var(--primary-color);
+        }
+
+        header p {
+            font-size: 1rem;
+            max-width: 650px;
+            margin: 10px auto 30px auto;
+            color: #ccc;
+        }
+
+        .profile-img {
+            width: 150px;
+            height: 150px;
+            border-radius: 50%;
+            object-fit: cover;
+            border: 5px solid var(--primary-color);
+            margin-bottom: 20px;
+            box-shadow: 0 0 20px rgba(255, 87, 34, 0.5); /* Sombra para reforçar exclusividade */
+        }
+
+        .cta-button {
+            display: inline-block;
+            background-color: var(--primary-color);
+            color: white;
+            padding: 15px 35px;
+            text-decoration: none;
+            font-weight: bold;
+            border-radius: 8px;
+            font-size: 1.15rem;
+            transition: background-color 0.3s;
+            margin-top: 25px;
+            box-shadow: 0 4px 20px rgba(255, 87, 34, 0.4);
+            letter-spacing: 1px;
+            text-transform: uppercase;
+        }
+
+        .cta-button:hover {
+            background-color: #e64a19;
+        }
+
+        /* Seções */
+        section {
+            padding: 60px 0;
+            border-top: 1px solid #222;
+        }
+
+        .value-prop h2, .case-study h2, .custom-plan h2 {
+            text-align: center;
+            color: var(--secondary-color);
+            margin-bottom: 40px;
+            font-size: 2.2rem;
+            text-transform: uppercase;
+        }
+
+        /* Prova Social */
+        .case-study {
+            background-color: #000;
+        }
+
+        .results-grid {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 25px;
+            justify-content: center;
+        }
+
+        .result-card {
+            background-color: var(--card-bg);
+            padding: 25px;
+            border-radius: 12px;
+            flex: 1 1 calc(50% - 25px); 
+            box-shadow: 0 5px 20px rgba(0, 0, 0, 0.5);
+            min-width: 300px;
+            transition: transform 0.3s;
+        }
+        
+        .result-card:hover {
+            transform: translateY(-5px);
+        }
+
+        .result-card h3 {
+            color: var(--primary-color);
+            font-size: 1.5rem;
+            margin-bottom: 15px;
+            border-bottom: 2px solid #333;
+            padding-bottom: 8px;
+        }
+
+        .stats-list {
+            list-style: none;
+            padding: 0;
+            font-size: 1.05rem;
+        }
+
+        .stats-list li {
+            padding: 10px 0;
+            border-bottom: 1px dashed #2a2a2a;
+        }
+
+        .stats-list strong {
+            color: var(--secondary-color);
+        }
+
+        /* Galeria de Provas (Carrossel) */
+        .proof-gallery {
+            margin-top: 50px;
+            overflow-x: scroll;
+            white-space: nowrap;
+            padding-bottom: 15px;
+            -webkit-overflow-scrolling: touch;
+            text-align: center;
+        }
+
+        .proof-gallery img {
+            width: 85vw; 
+            max-width: 400px;
+            height: auto;
+            margin-right: 20px;
+            border-radius: 8px;
+            display: inline-block;
+            border: 1px solid #333;
+        }
+        
+        .proof-gallery::-webkit-scrollbar {
+            height: 8px;
+        }
+
+        .proof-gallery::-webkit-scrollbar-thumb {
+            background: var(--primary-color);
+            border-radius: 10px;
+        }
+        
+        /* Plano Personalizado */
+        .plan-guide {
+            background: var(--card-bg);
+            padding: 35px;
+            border-radius: 12px;
+            max-width: 750px;
+            margin: 0 auto;
+            border: 1px solid #333;
+        }
+
+        .plan-guide ul {
+            list-style-type: none;
+            padding-left: 0;
+            margin-top: 20px;
+        }
+        
+        .plan-guide li {
+            background: #222;
+            padding: 15px;
+            margin-bottom: 10px;
+            border-left: 4px solid var(--primary-color);
+            border-radius: 4px;
+        }
+        
+        /* Responsividade */
+        @media (min-width: 768px) {
+            h1 {
+                font-size: 3rem;
+            }
+            .result-card {
+                flex: 1 1 calc(50% - 25px); 
+            }
+            .proof-gallery img {
+                width: 300px; 
+            }
+        }
+    </style>
 </head>
 <body>
 
-  <!-- NAV -->
-  <header class="nav">
-    <div class="container nav__wrap">
-      <a class="brand" href="#home" aria-label="Ir para início">
-        <img class="brand__avatar" src="https://i.ibb.co/wNSqt4HG/IMG-1308.png" alt="Foto de perfil de Erick Garcia" />
-        <div class="brand__text">
-          <strong>Erick Garcia</strong>
-          <span>Social Media  Foto  Vídeo</span>
+    <header>
+        <div class="container">
+            <img src="https://i.ibb.co/wNSqt4HG/IMG-1308.png" alt="Erick Garcia - Social Media, Fotógrafo e Videomaker" class="profile-img">
+
+            <p style="font-size: 1rem; color: var(--primary-color); font-weight: 700; text-transform: uppercase;">O MARKETING QUE VOCÊ TENTA FAZER HOJE ESTÁ CUSTANDO A SUA AUTORIDADE.</p>
+            <h1>Eu sou **Erick Garcia**, e meu trabalho é para <span class="highlight">QUEM ESTÁ PRONTO PARA INVESTIR</span> em resultados.</h1>
+            <p>Em 132 dias, gerei mais de **15 Milhões** de visualizações, transformando perfis estagnados em máquinas de lucro. Eu sou a sua produtora e estrategista completa.</p>
+
+            <a href="https://wa.me/5543988632851?text=Ol%C3%A1%2C%20Erick.%20Quero%20agendar%20minha%20consulta%20para%20o%20Plano%20Exclusivo." class="cta-button">
+                NÃO TENHO VAGAS PARA AMADORES. Monte seu plano agora.
+            </a>
         </div>
-      </a>
+    </header>
 
-      <nav id="menu" class="menu" aria-label="Navegação principal">
-        <a href="#home">Início</a>
-        <a href="#case">Resultados</a>
-        <a href="#solucoes">Sob Medida</a>
-        <a href="#processo">Processo</a>
-        <a href="#politicas">Políticas</a>
-        <a class="btn btn--primary btn--small" target="_blank"
-           href="https://wa.me/5543988632851?text=Ola%20Erick%2C%20quero%20montar%20um%20escopo%20sob%20medida%20para%20minha%20marca.">
-          Falar no WhatsApp
-        </a>
-      </nav>
-
-      <button id="hamburger" class="hamburger" aria-label="Abrir menu" aria-controls="menu" aria-expanded="false">
-        <span></span><span></span><span></span>
-      </button>
-    </div>
-  </header>
-
-  <main>
-
-    <!-- HERO -->
-    <section id="home" class="hero">
-      <div class="container hero__grid">
-        <div class="hero__copy">
-          <span class="pill">Audiência  Autoridade  Vendas</span>
-          <h1>Conteúdo que transforma atenção em crescimento real.</h1>
-          <p>Operação completa de social. Captação, edição, fotos e gestão com estratégia clara e execução consistente. Agenda seletiva para garantir padrão alto.</p>
-          <div class="cta-row">
-            <a href="#solucoes" class="btn btn--primary btn--lg">Montar escopo</a>
-            <a href="#case" class="btn btn--ghost btn--lg">Ver resultados</a>
-          </div>
-
-          <div class="stats">
-            <div class="stat"><strong>15,2M</strong><span>visualizações no Instagram</span></div>
-            <div class="stat"><strong>+58k</strong><span>novos seguidores</span></div>
-            <div class="stat"><strong>13M</strong><span>visualizações no TikTok</span></div>
-            <div class="stat"><strong>R$ 3,8k</strong><span>monetização em 60 dias</span></div>
-          </div>
-        </div>
-
-        <div class="hero__media card-glow">
-          <img src="https://i.ibb.co/wNSqt4HG/IMG-1308.png" alt="Erick Garcia" class="hero__img" loading="lazy">
-          <div class="tag tag--floating">Agenda limitada  até 3 clientes</div>
-        </div>
-      </div>
-    </section>
-
-    <!-- CASE -->
-    <section id="case" class="section">
-      <div class="container">
-        <h2>Resultados comprovados</h2>
-        <p class="lead">
-          Entre 11 de maio e 20 de setembro de 2025 conduzi a operação de social de um cliente e converti presença em números que geram negócio.
-        </p>
-
-        <div class="cards-2">
-          <div class="card">
-            <h3>Instagram</h3>
-            <ul class="bullets">
-              <li>Seguidores  56k → 114k</li>
-              <li>Visualizações  15,2M</li>
-              <li>Interações  1,3M</li>
-              <li>Alcance  3,6M</li>
-            </ul>
-          </div>
-          <div class="card">
-            <h3>TikTok</h3>
-            <ul class="bullets">
-              <li>Seguidores  4k → 83,9k</li>
-              <li>Visualizações  13M</li>
-              <li>Curtidas  1,5M  Compartilhamentos  147k</li>
-              <li>Monetização em 60 dias  R$ 3.848,21</li>
-            </ul>
-          </div>
-        </div>
-
-        <!-- Carrossel Instagram -->
-        <div class="carousel carousel--proof">
-          <div class="carousel__head">
-            <h3>Provas Instagram</h3>
-            <div class="carousel__controls">
-              <button class="carousel__btn" data-target="#carousel-ig" data-dir="prev" aria-label="Anterior">‹</button>
-              <button class="carousel__btn" data-target="#carousel-ig" data-dir="next" aria-label="Próximo">›</button>
-            </div>
-          </div>
-          <div id="carousel-ig" class="carousel__track" data-index="0">
-            <div class="carousel__item"><img src="https://i.ibb.co/qYK5Qx8c/instagram-perfil.jpg" alt="Instagram perfil" loading="lazy"></div>
-            <div class="carousel__item"><img src="https://i.ibb.co/B2GG6s9J/instagram-01.jpg" alt="Instagram 01" loading="lazy"></div>
-            <div class="carousel__item"><img src="https://i.ibb.co/kV6Ky0Sb/instagram-02.jpg" alt="Instagram 02" loading="lazy"></div>
-          </div>
-        </div>
-
-        <!-- Carrossel TikTok -->
-        <div class="carousel carousel--proof">
-          <div class="carousel__head">
-            <h3>Provas TikTok</h3>
-            <div class="carousel__controls">
-              <button class="carousel__btn" data-target="#carousel-tt" data-dir="prev" aria-label="Anterior">‹</button>
-              <button class="carousel__btn" data-target="#carousel-tt" data-dir="next" aria-label="Próximo">›</button>
-            </div>
-          </div>
-          <div id="carousel-tt" class="carousel__track" data-index="0">
-            <div class="carousel__item"><img src="https://i.ibb.co/LdWy8VXK/tiktok-perfil.jpg" alt="TikTok perfil" loading="lazy"></div>
-            <div class="carousel__item"><img src="https://i.ibb.co/rKTSY3KL/tiktok-01.jpg" alt="TikTok 01" loading="lazy"></div>
-            <div class="carousel__item"><img src="https://i.ibb.co/5WVrDxcc/tiktok-02.jpg" alt="TikTok 02" loading="lazy"></div>
-          </div>
-        </div>
-
-        <p class="quote">Operação  consistência  criatividade. A combinação que move números e negócios.</p>
-      </div>
-    </section>
-
-    <!-- ESCOPOS SOB MEDIDA -->
-    <section id="solucoes" class="section section--alt">
-      <div class="container">
-        <h2>Monte seu escopo sob medida</h2>
-        <p class="lead">Selecione canais e volume. Eu retorno com proposta e cronograma. Simples e objetivo.</p>
-
-        <div class="builder">
-          <form id="builderForm" class="builder__grid" onsubmit="return false;">
-
-            <!-- Canais -->
-            <div class="card">
-              <h3>Canais</h3>
-              <div class="chips" role="group" aria-label="Seleção de canais">
-                <label class="chip" tabindex="0">
-                  <input type="checkbox" name="ig" id="ig" checked aria-label="Instagram">
-                  <span class="chip__content">
-                    <svg class="chip__check" width="16" height="16" viewBox="0 0 16 16" aria-hidden="true">
-                      <path fill="currentColor" d="M6.6 11.2L3.7 8.3l-1 1 3.9 3.9 7-7-1-1-6 6z"/>
-                    </svg>
-                    <span>Instagram</span>
-                  </span>
-                </label>
-
-                <label class="chip" tabindex="0">
-                  <input type="checkbox" name="tt" id="tt" aria-label="TikTok">
-                  <span class="chip__content">
-                    <svg class="chip__check" width="16" height="16" viewBox="0 0 16 16" aria-hidden="true">
-                      <path fill="currentColor" d="M6.6 11.2L3.7 8.3l-1 1 3.9 3.9 7-7-1-1-6 6z"/>
-                    </svg>
-                    <span>TikTok</span>
-                  </span>
-                </label>
-
-                <label class="chip" tabindex="0">
-                  <input type="checkbox" name="yt" id="yt" aria-label="YouTube vídeo longo">
-                  <span class="chip__content">
-                    <svg class="chip__check" width="16" height="16" viewBox="0 0 16 16" aria-hidden="true">
-                      <path fill="currentColor" d="M6.6 11.2L3.7 8.3l-1 1 3.9 3.9 7-7-1-1-6 6z"/>
-                    </svg>
-                    <span>YouTube vídeo longo</span>
-                  </span>
-                </label>
-
-                <label class="chip" tabindex="0">
-                  <input type="checkbox" name="shorts" id="shorts" aria-label="YouTube Shorts">
-                  <span class="chip__content">
-                    <svg class="chip__check" width="16" height="16" viewBox="0 0 16 16" aria-hidden="true">
-                      <path fill="currentColor" d="M6.6 11.2L3.7 8.3l-1 1 3.9 3.9 7-7-1-1-6 6z"/>
-                    </svg>
-                    <span>YouTube Shorts</span>
-                  </span>
-                </label>
-              </div>
-              <p class="hint">Instagram é a base. Adicionar TikTok e Shorts escala alcance e prova social.</p>
-            </div>
-
-            <!-- Volume por semana -->
-            <div class="card">
-              <h3>Volume por semana</h3>
-
-              <label class="num">
-                <span>Reels ou cortes por semana</span>
-                <div class="stepper">
-                  <button type="button" data-step="reels" data-dir="-">−</button>
-                  <input type="number" id="reels" min="0" step="1" value="7" inputmode="numeric" pattern="[0-9]*" aria-label="Reels por semana">
-                  <button type="button" data-step="reels" data-dir="+">+</button>
+    <section class="value-prop">
+        <div class="container">
+            <h2>A DIFERENÇA ENTRE POSTAR E DOMINAR.</h2>
+            <p style="text-align: center; max-width: 800px; margin: 0 auto 50px auto;">**O meu valor é o custo de não ter os meus resultados.** 99% dos "Social Medias" são apenas agendadores. Eu entrego a **Provas Social, o Vídeo de Cinema e a Estratégia de Persuasão** necessária para um investimento de alto nível.</p>
+            
+            <div class="results-grid">
+                <div class="result-card">
+                    <h3>ESTRATÉGIA DE AUTORIDADE</h3>
+                    <p>Foco na dependência da audiência. Roteiro e táticas de escassez que transformam seguidores em clientes prontos para pagar o seu valor.</p>
                 </div>
-              </label>
-
-              <label class="num">
-                <span>Posts de feed por semana</span>
-                <div class="stepper">
-                  <button type="button" data-step="posts" data-dir="-">−</button>
-                  <input type="number" id="posts" min="0" step="1" value="7" inputmode="numeric" pattern="[0-9]*" aria-label="Posts por semana">
-                  <button type="button" data-step="posts" data-dir="+">+</button>
+                <div class="result-card">
+                    <h3>PRODUÇÃO DE VÍDEO CINEMATOGRÁFICA</h3>
+                    <p>Captação em 4K com câmeras Full-Frame e lentes Prime. Seu conteúdo terá a qualidade de uma produção profissional. **Seu negócio merece o melhor.**</p>
                 </div>
-              </label>
-
-              <label class="num">
-                <span>Stories por semana</span>
-                <div class="stepper">
-                  <button type="button" data-step="stories" data-dir="-">−</button>
-                  <input type="number" id="stories" min="0" step="1" value="14" inputmode="numeric" pattern="[0-9]*" aria-label="Stories por semana">
-                  <button type="button" data-step="stories" data-dir="+">+</button>
+                <div class="result-card">
+                    <h3>FOTOGRAFIA QUE VENDE</h3>
+                    <p>Imagens com alto poder de comunicação. Sessões fotográficas que não são apenas estéticas, mas que elevam seu posicionamento de mercado e justificam o preço.</p>
                 </div>
-              </label>
+            </div>
+            <p style="text-align: center; margin-top: 40px; font-size: 0.9rem; color: #777;">**MEUS EQUIPAMENTOS:** Câmeras Full-Frame, lentes Prime, estabilizadores profissionais e kits de áudio e iluminação de estúdio. Este é o investimento que faço pelo seu sucesso.</p>
+        </div>
+    </section>
 
-              <p class="hint">Use os botões ou digite. Sem limite máximo.</p>
+    <section class="case-study">
+        <div class="container">
+            <h2>O INVESTIMENTO QUE SE PAGA EM RESULTADOS REAIS.</h2>
+            <p style="text-align: center; font-style: italic; color: #ccc;">Veja o que aconteceu em apenas 132 dias (11/MAI a 20/SET/2025) com um cliente que **decidiu investir** no serviço completo:</p>
+
+            <div class="results-grid">
+                <div class="result-card" style="border: 2px solid var(--secondary-color);">
+                    <h3>🚀 TIKTOK: MAIS DE R$ 3.800 DE LUCRO DIRETO</h3>
+                    <ul class="stats-list">
+                        <li>**Faturamento Direto:** **R$ 3.848,21** em Recompensas Estimadas.</li>
+                        <li>**Crescimento:** De 4K para **62,5 Mil Seguidores** (Explosão de 1990% no volume).</li>
+                        <li>**Impacto:** **13 Milhões** de Visualizações e **1,5 Milhão** de Curtidas.</li>
+                    </ul>
+                </div>
+                <div class="result-card" style="border: 2px solid var(--primary-color);">
+                    <h3>📈 INSTAGRAM: DOMÍNIO DE AUTORIDADE (+712% VIEWS)</h3>
+                    <ul class="stats-list">
+                        <li>**Visualizações:** Aumento de **+712%** (Mais de **15,2 Milhões** de Views).</li>
+                        <li>**Engajamento:** Aumento de **+840%** em Interações.</li>
+                        <li>**Audiência:** De 56K para **114 Mil Seguidores** (Mais que dobrou em 4 meses).</li>
+                    </ul>
+                </div>
             </div>
 
-            <!-- Captação e fotos no mês -->
-            <div class="card">
-              <h3>Captação e fotos no mês</h3>
-
-              <label class="num">
-                <span>Visitas de captação no mês</span>
-                <div class="stepper">
-                  <button type="button" data-step="visits" data-dir="-">−</button>
-                  <input type="number" id="captacoes" min="0" step="1" value="2" inputmode="numeric" pattern="[0-9]*" aria-label="Visitas por mês">
-                  <button type="button" data-step="visits" data-dir="+">+</button>
-                </div>
-              </label>
-
-              <label class="num">
-                <span>Fotos tratadas no mês</span>
-                <div class="stepper">
-                  <button type="button" data-step="photos" data-dir="-">−</button>
-                  <input type="number" id="photos" min="0" step="1" value="20" inputmode="numeric" pattern="[0-9]*" aria-label="Fotos por mês">
-                  <button type="button" data-step="photos" data-dir="+">+</button>
-                </div>
-              </label>
-
-              <p class="hint">Canon SL3 e iPhone 16 Pro Max com luz dedicada. Estética consistente para feed e capas.</p>
+            <h3 style="text-align: center; margin-top: 60px; color: var(--light-text); font-weight: 700;">PROVA SOCIAL: OS PRINTS QUE VALEM MAIS QUE MIL PALAVRAS</h3>
+            <div class="proof-gallery">
+                <img src="https://i.ibb.co/rKTSY3KL/tiktok-01.jpg" alt="Prova TikTok Estatísticas de Engajamento">
+                <img src="https://i.ibb.co/5WVrDxcc/tiktok-02.jpg" alt="Prova TikTok Análise de Recompensas Monetárias">
+                <img src="https://i.ibb.co/LdWy8VXK/tiktok-perfil.jpg" alt="Prova TikTok Perfil Seguidores">
+                <img src="https://i.ibb.co/B2GG6s9J/instagram-01.jpg" alt="Prova Instagram Visualizações e Interações">
+                <img src="https://i.ibb.co/kV6Ky0Sb/instagram-02.jpg" alt="Prova Instagram Seguidores e Alcance">
+                <img src="https://i.ibb.co/qYK5Qx8c/instagram-perfil.jpg" alt="Prova Instagram Perfil Seguidores">
             </div>
-
-            <!-- Preferências -->
-            <div class="card">
-              <h3>Preferências</h3>
-              <label class="sel">
-                Linha editorial
-                <select id="linha" aria-label="Linha editorial">
-                  <option value="Institucional">Institucional</option>
-                  <option value="Ofertas e comercial">Ofertas e comercial</option>
-                  <option value="Autoridade e conteúdo" selected>Autoridade e conteúdo</option>
-                  <option value="Eventos e agenda">Eventos e agenda</option>
-                </select>
-              </label>
-
-              <label class="sel">
-                Qualidade de edição
-                <select id="quality" aria-label="Qualidade de edição">
-                  <option value="Básica">Básica</option>
-                  <option value="Intermediária" selected>Intermediária</option>
-                  <option value="Premium">Premium</option>
-                </select>
-              </label>
-
-              <label class="txt">
-                Observações ou links
-                <textarea id="extras" rows="4" placeholder="Exemplos  horários preferidos  referências  links de vídeos brutos  temas de campanha"></textarea>
-              </label>
+        </div>
+    </section>
+    
+    <section class="custom-plan" style="background-color: #0d0d0d; padding: 60px 0;">
+        <div class="container">
+            <h2>NÃO É UM PACOTE. É UM PLANO DE INVESTIMENTO EXCLUSIVO.</h2>
+            <p style="text-align: center; font-size: 1.2rem; color: #ccc;">O valor do meu trabalho é a soma da sua necessidade com a minha execução de alto nível. **Não desperdiçamos tempo.** Você define a sua ambição, e eu entrego o preço que ela custa.</p>
+            
+            <div class="plan-guide">
+                <h3 style="color: var(--secondary-color);">SEU PLANO DE AÇÃO: O QUE VOCÊ ESTÁ PRONTO PARA FAZER?</h3>
+                <p style="font-size: 1rem; color: #bbb;">**Copie e cole a estrutura abaixo no WhatsApp, preenchendo com a sua meta:**</p>
+                <ul>
+                    <li>**1. Frequência de Produção:** Quantas diárias de 3 horas por semana/quinzena são necessárias para capturar fotos e vídeos brutos?</li>
+                    <li>**2. Entrega Semanal:** Qual o volume exato de Reels/TikToks e Fotos finalizados que você exige?</li>
+                    <li>**3. Canais & Gestão:** Quais plataformas (IG/TT/YT) farão parte da estratégia?</li>
+                    <li>**4. O Seu Objetivo:** Qual é a sua meta (Ex: Vender $X mil, Dobrar Seguidores, Construir Autoridade)?</li>
+                </ul>
+                <p style="font-weight: bold; margin-top: 30px; text-align: center; color: var(--primary-color);">**AVISO DE ESCASSEZ:** Minha agenda é restrita. O processo de negociação só começa após o envio deste plano.</p>
             </div>
-
-            <!-- Resumo + WhatsApp -->
-            <aside class="card card--accent builder__summary">
-              <h3>Resumo do escopo</h3>
-              <ul class="bullets sm" id="bulletsResumo"></ul>
-              <button id="sendScope" type="button" class="btn btn--dark btn--block">
-                Enviar escopo pelo WhatsApp
-              </button>
-              <p class="tiny">Retorno com proposta e cronograma. Contrato mensal  50 por cento na assinatura e 50 por cento no vencimento.</p>
-            </aside>
-          </form>
+            
+            <a href="https://wa.me/5543988632851?text=Ol%C3%A1%2C%20Erick.%20Meu%20Plano%20de%20Investimento%20Personalizado%20%C3%A9%3A%20%5BInsira%20seu%20plano%20aqui%5D" class="cta-button" style="background-color: var(--secondary-color);">
+                ENVIAR MEU PLANO (Inicie a Consulta)
+            </a>
         </div>
-
-        <div class="notice">
-          <strong>Foco em resultado.</strong> Retenção de vídeo, prova social e cliques que viram negócio. Escopo moldado pela meta da marca.
-        </div>
-      </div>
     </section>
 
-    <!-- PROCESSO -->
-    <section id="processo" class="section">
-      <div class="container">
-        <h2>Processo para reduzir atrito e acelerar entrega</h2>
-        <div class="cards-4">
-          <div class="card">
-            <h3>1  Diagnóstico</h3>
-            <p>Meta, funil, persona e ofertas. Defino tom de voz e calendário.</p>
-          </div>
-          <div class="card">
-            <h3>2  Captação</h3>
-            <p>Roteiros objetivos e captação ágil. Vídeo e foto com estética da marca.</p>
-          </div>
-          <div class="card">
-            <h3>3  Produção</h3>
-            <p>Cortes de retenção, capas que clicam e copy que converte.</p>
-          </div>
-          <div class="card">
-            <h3>4  Publicação e performance</h3>
-            <p>Programação, distribuição por canal e ajustes semanais com dados.</p>
-          </div>
-        </div>
-      </div>
-    </section>
+    <footer style="text-align: center; padding: 20px 0; background-color: #000; font-size: 0.8rem; color: #555;">
+        Erick Garcia - Social Media, Fotógrafo e Videomaker. O investimento é diretamente proporcional ao resultado.
+    </footer>
 
-    <!-- POLÍTICAS -->
-    <section id="politicas" class="section">
-      <div class="container">
-        <h2>Políticas e agenda</h2>
-        <div class="policies">
-          <div class="card">
-            <h3>Agenda</h3>
-            <ul class="bullets">
-              <li>Até 3 clientes simultâneos</li>
-              <li>Qualidade e velocidade acima de volume</li>
-            </ul>
-          </div>
-          <div class="card">
-            <h3>Contrato e pagamento</h3>
-            <ul class="bullets">
-              <li>Contrato mensal</li>
-              <li>50 por cento na assinatura  50 por cento no vencimento</li>
-              <li>Pix ou transferência</li>
-            </ul>
-          </div>
-          <div class="card">
-            <h3>Operação</h3>
-            <ul class="bullets">
-              <li>Quando não há visita sua equipe envia brutos e mantenho o fluxo</li>
-              <li>Calendário e pauta com antecedência</li>
-              <li>Revisões objetivas por peça</li>
-            </ul>
-          </div>
-        </div>
-      </div>
-    </section>
-
-    <!-- CTA -->
-    <section id="contato" class="cta">
-      <div class="container">
-        <h2>Pronto para escalar presença e vendas</h2>
-        <p>Me chame no WhatsApp e montamos seu escopo em poucos minutos.</p>
-        <div class="cta-row cta-row--center">
-          <a class="btn btn--dark btn--lg" target="_blank" href="https://wa.me/5543988632851">Falar no WhatsApp</a>
-          <a class="btn btn--ghost btn--lg" href="#solucoes">Montar escopo</a>
-        </div>
-      </div>
-    </section>
-
-  </main>
-
-  <footer class="footer">
-    <div class="container">
-      © <span id="year"></span> Erick Garcia. Todos os direitos reservados.
-    </div>
-  </footer>
-
-  <script src="script.js"></script>
 </body>
 </html>
