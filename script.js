@@ -1,4 +1,4 @@
-// Menu mobile
+// ===== NAV MOBILE =====
 const burger = document.getElementById('hamburger');
 const menu = document.getElementById('menu');
 if (burger && menu) {
@@ -9,11 +9,11 @@ if (burger && menu) {
   });
 }
 
-// Ano no footer
+// ===== FOOTER YEAR =====
 const yearEl = document.getElementById('year');
 if (yearEl) yearEl.textContent = new Date().getFullYear();
 
-// Scroll suave e fechar menu no mobile
+// ===== SMOOTH SCROLL =====
 document.querySelectorAll('a[href^="#"]').forEach(a => {
   a.addEventListener('click', (e) => {
     const id = a.getAttribute('href');
@@ -27,7 +27,7 @@ document.querySelectorAll('a[href^="#"]').forEach(a => {
   });
 });
 
-// Carrossel simples
+// ===== CAROUSEL =====
 function initCarousel(trackId){
   const track = document.querySelector(trackId);
   if (!track) return;
@@ -47,83 +47,102 @@ function initCarousel(trackId){
 initCarousel('#carousel-ig');
 initCarousel('#carousel-tt');
 
-// ---------- CONFIGURADOR (SEM PREÇO) ----------
+// ===== BUILDER (SEM PREÇO) =====
 const $ = s => document.querySelector(s);
 const form = $('#builderForm');
 const bulletsResumo = $('#bulletsResumo');
 const btnWhats = $('#btnWhats');
 
-// Steppers
+// garante que a tecla Enter não submeta o form
+form?.addEventListener('keydown', (e) => {
+  if (e.key === 'Enter') e.preventDefault();
+});
+
+// Stepper helpers
 function setupStepper(name){
   const minus = document.querySelector(`[data-step="${name}"][data-dir="-"]`);
   const plus  = document.querySelector(`[data-step="${name}"][data-dir="+"]`);
-  const input = form.querySelector(`input[name="${name}Week"], input[name="${name}Month"], input[name="${name}"]`);
+  const input = form?.querySelector(`input[name="${name}Week"], input[name="${name}Month"], input[name="${name}"]`);
   if (!input) return;
-  minus?.addEventListener('click', () => {
-    const v = Math.max(0, (parseInt(input.value || '0', 10) - 1));
-    input.value = v; update();
-  });
-  plus?.addEventListener('click', () => {
-    const v = (parseInt(input.value || '0', 10) + 1);
-    input.value = v; update();
-  });
+  minus?.addEventListener('click', () => { input.value = Math.max(0, (+input.value||0) - 1); update(); });
+  plus?.addEventListener('click',  () => { input.value = (+input.value||0) + 1; update(); });
 }
 
 ['reels','posts','stories'].forEach(setupStepper);
 setupStepper('visits');
 setupStepper('photos');
 
-// Bind mudanças
 form?.addEventListener('input', update);
 form?.addEventListener('change', update);
 
-// Helper
 function valInt(name){
-  const el = form.querySelector(`[name="${name}"]`);
+  const el = form?.querySelector(`[name="${name}"]`);
   return Math.max(0, parseInt(el?.value || '0', 10));
 }
 function checked(name){
-  const el = form.querySelector(`[name="${name}"]`);
+  const el = form?.querySelector(`[name="${name}"]`);
   return !!el?.checked;
 }
+function labelEditorial(v){
+  return ({institucional:'Institucional',ofertas:'Ofertas / comercial',autoridade:'Autoridade / conteúdo',eventos:'Eventos / agenda'})[v] || v;
+}
+function labelQualidade(v){
+  return ({basica:'Básica',intermediaria:'Intermediária',premium:'Premium'})[v] || v;
+}
+function escapeHtml(s){
+  return s.replace(/[&<>"']/g, m => ({'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;',"'":'&#39;'}[m]));
+}
 
-// Construir resumo
+// número do Whats limpo (só dígitos)
+const WHATS_NUMBER = '5543988632851';
+
+function buildMsg(payload){
+  return [
+    'Ola Erick, segue meu escopo sob medida:',
+    `- Canais: ${payload.canais.join(', ')}`,
+    `- Volume/semana: ${payload.reelsWeek} reels, ${payload.postsWeek} posts, ${payload.storiesWeek} stories`,
+    `- Estimativa mensal: ${payload.reelsMonth} reels, ${payload.postsMonth} posts, ${payload.storiesMonth} stories`,
+    `- Captação: ${payload.visitsMonth} visita(s)/mês`,
+    `- Fotos tratadas: ${payload.photosMonth}/mês`,
+    `- Linha editorial: ${labelEditorial(payload.editorial)}`,
+    `- Qualidade de edição: ${labelQualidade(payload.quality)}`,
+    payload.notes ? `- Observações: ${payload.notes}` : null,
+    'Aguardo a proposta com contrato mensal (50% na assinatura e 50% no vencimento).'
+  ].filter(Boolean).join('\n');
+}
+
 function update(){
   if (!form) return;
 
-  // Canais
+  // canais (garante IG marcado)
   const canais = [
     checked('ig') ? 'Instagram' : null,
     checked('tt') ? 'TikTok' : null,
     checked('yt') ? 'YouTube (longo)' : null,
     checked('shorts') ? 'YouTube Shorts' : null
   ].filter(Boolean);
-  if (!checked('ig')) { // garante IG pelo menos
+  if (!checked('ig')) {
     const igEl = form.querySelector('[name="ig"]');
     if (igEl) igEl.checked = true;
     canais.unshift('Instagram');
   }
 
-  // Volumes semanais (sem limite)
   const reelsWeek   = valInt('reelsWeek');
   const postsWeek   = valInt('postsWeek');
   const storiesWeek = valInt('storiesWeek');
-
-  // Mensais
   const visitsMonth = valInt('visitsMonth');
   const photosMonth = valInt('photosMonth');
 
-  // Preferências
   const editorial = form.querySelector('[name="editorial"]')?.value || 'autoridade';
   const quality   = form.querySelector('[name="quality"]')?.value || 'intermediaria';
   const notes     = (form.querySelector('[name="notes"]')?.value || '').trim();
 
-  // Aproximação mensal (4.3 semanas)
+  // aproximação mensal (4.3 semanas)
   const reelsMonth   = Math.round(reelsWeek * 4.3);
   const postsMonth   = Math.round(postsWeek * 4.3);
   const storiesMonth = Math.round(storiesWeek * 4.3);
 
-  // Bullets do resumo (visíveis)
+  // resumo visual
   bulletsResumo.innerHTML = `
     <li><b>Canais:</b> ${canais.join(' • ')}</li>
     <li><b>Reels/semana:</b> ${reelsWeek} • <b>Posts/semana:</b> ${postsWeek} • <b>Stories/semana:</b> ${storiesWeek}</li>
@@ -133,41 +152,20 @@ function update(){
     ${notes ? `<li><b>Obs.:</b> ${escapeHtml(notes)}</li>` : ``}
   `;
 
-  // Mensagem WhatsApp
-  const msg = [
-    `Ola Erick, segue meu escopo sob medida:`,
-    `- Canais: ${canais.join(', ')}`,
-    `- Volume por semana: ${reelsWeek} reels, ${postsWeek} posts, ${storiesWeek} stories`,
-    `- Estimativa mensal: ${reelsMonth} reels, ${postsMonth} posts, ${storiesMonth} stories`,
-    `- Captação: ${visitsMonth} visita(s)/mês`,
-    `- Fotos tratadas: ${photosMonth}/mês`,
-    `- Linha editorial: ${labelEditorial(editorial)}`,
-    `- Qualidade de edição: ${labelQualidade(quality)}`,
-    notes ? `- Observações: ${notes}` : null,
-    `Me envie a proposta com contrato mensal (50% na assinatura e 50% no vencimento).`
-  ].filter(Boolean).join('\n');
-
-  btnWhats.href = `https://wa.me/5543988632851?text=${encodeURIComponent(msg)}`;
+  // monta link do WhatsApp (sem usar <a href="#"> para evitar refresh)
+  const payload = { canais, reelsWeek, postsWeek, storiesWeek, reelsMonth, postsMonth, storiesMonth, visitsMonth, photosMonth, editorial, quality, notes };
+  const msg = encodeURIComponent(buildMsg(payload));
+  btnWhats.dataset.href = `https://wa.me/${WHATS_NUMBER}?text=${msg}`;
 }
 
-function labelEditorial(v){
-  return ({
-    institucional:'Institucional',
-    ofertas:'Ofertas / comercial',
-    autoridade:'Autoridade / conteúdo',
-    eventos:'Eventos / agenda'
-  })[v] || v;
-}
-function labelQualidade(v){
-  return ({
-    basica:'Básica',
-    intermediaria:'Intermediária',
-    premium:'Premium'
-  })[v] || v;
-}
-function escapeHtml(s){
-  return s.replace(/[&<>"']/g, m => ({'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;',"'":'&#39;'}[m]));
-}
+// abre WhatsApp numa aba nova sem recarregar a página
+btnWhats?.addEventListener('click', (e) => {
+  e.preventDefault();
+  const link = btnWhats.dataset.href;
+  if (link) {
+    window.open(link, '_blank', 'noopener,noreferrer');
+  }
+});
 
-// Inicializa
+// init
 update();
