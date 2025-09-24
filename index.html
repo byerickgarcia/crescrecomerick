@@ -142,55 +142,52 @@
 
         <div class="builder">
           <form id="builderForm" class="builder__grid" onsubmit="return false;">
-            <!-- Canais (novo) -->
-<div class="card">
-  <h3>Canais</h3>
+            <!-- Canais -->
+            <div class="card">
+              <h3>Canais</h3>
+              <div class="chips" role="group" aria-label="Seleção de canais">
+                <label class="chip" tabindex="0">
+                  <input type="checkbox" name="ig" checked aria-label="Instagram">
+                  <span class="chip__content">
+                    <svg class="chip__check" width="16" height="16" viewBox="0 0 16 16" aria-hidden="true">
+                      <path fill="currentColor" d="M6.6 11.2L3.7 8.3l-1 1 3.9 3.9 7-7-1-1-6 6z"/>
+                    </svg>
+                    <span>Instagram</span>
+                  </span>
+                </label>
 
-  <div class="chips" role="group" aria-label="Seleção de canais">
-    <!-- Instagram sempre recomendado; já marcado -->
-    <label class="chip" tabindex="0">
-      <input type="checkbox" name="ig" checked aria-label="Instagram">
-      <span class="chip__content">
-        <svg class="chip__check" width="16" height="16" viewBox="0 0 16 16" aria-hidden="true">
-          <path fill="currentColor" d="M6.6 11.2L3.7 8.3l-1 1 3.9 3.9 7-7-1-1-6 6z"/>
-        </svg>
-        <span>Instagram</span>
-      </span>
-    </label>
+                <label class="chip" tabindex="0">
+                  <input type="checkbox" name="tt" aria-label="TikTok">
+                  <span class="chip__content">
+                    <svg class="chip__check" width="16" height="16" viewBox="0 0 16 16" aria-hidden="true">
+                      <path fill="currentColor" d="M6.6 11.2L3.7 8.3l-1 1 3.9 3.9 7-7-1-1-6 6z"/>
+                    </svg>
+                    <span>TikTok</span>
+                  </span>
+                </label>
 
-    <label class="chip" tabindex="0">
-      <input type="checkbox" name="tt" aria-label="TikTok">
-      <span class="chip__content">
-        <svg class="chip__check" width="16" height="16" viewBox="0 0 16 16" aria-hidden="true">
-          <path fill="currentColor" d="M6.6 11.2L3.7 8.3l-1 1 3.9 3.9 7-7-1-1-6 6z"/>
-        </svg>
-        <span>TikTok</span>
-      </span>
-    </label>
+                <label class="chip" tabindex="0">
+                  <input type="checkbox" name="yt" aria-label="YouTube vídeo longo">
+                  <span class="chip__content">
+                    <svg class="chip__check" width="16" height="16" viewBox="0 0 16 16" aria-hidden="true">
+                      <path fill="currentColor" d="M6.6 11.2L3.7 8.3l-1 1 3.9 3.9 7-7-1-1-6 6z"/>
+                    </svg>
+                    <span>YouTube vídeo longo</span>
+                  </span>
+                </label>
 
-    <label class="chip" tabindex="0">
-      <input type="checkbox" name="yt" aria-label="YouTube vídeo longo">
-      <span class="chip__content">
-        <svg class="chip__check" width="16" height="16" viewBox="0 0 16 16" aria-hidden="true">
-          <path fill="currentColor" d="M6.6 11.2L3.7 8.3l-1 1 3.9 3.9 7-7-1-1-6 6z"/>
-        </svg>
-        <span>YouTube vídeo longo</span>
-      </span>
-    </label>
-
-    <label class="chip" tabindex="0">
-      <input type="checkbox" name="shorts" aria-label="YouTube Shorts">
-      <span class="chip__content">
-        <svg class="chip__check" width="16" height="16" viewBox="0 0 16 16" aria-hidden="true">
-          <path fill="currentColor" d="M6.6 11.2L3.7 8.3l-1 1 3.9 3.9 7-7-1-1-6 6z"/>
-        </svg>
-        <span>YouTube Shorts</span>
-      </span>
-    </label>
-  </div>
-
-  <p class="hint">Selecione onde sua marca deve estar. Instagram é base. TikTok e Shorts ampliam alcance e prova social.</p>
-</div>
+                <label class="chip" tabindex="0">
+                  <input type="checkbox" name="shorts" aria-label="YouTube Shorts">
+                  <span class="chip__content">
+                    <svg class="chip__check" width="16" height="16" viewBox="0 0 16 16" aria-hidden="true">
+                      <path fill="currentColor" d="M6.6 11.2L3.7 8.3l-1 1 3.9 3.9 7-7-1-1-6 6z"/>
+                    </svg>
+                    <span>YouTube Shorts</span>
+                  </span>
+                </label>
+              </div>
+              <p class="hint">Instagram é a base. Adicionar TikTok e Shorts escala alcance e prova social.</p>
+            </div>
 
             <!-- Volume por semana -->
             <div class="card">
@@ -226,7 +223,7 @@
               <p class="hint">Use os botões ou digite. Sem limite máximo.</p>
             </div>
 
-            <!-- Captação e Fotos por mês -->
+            <!-- Captação e fotos no mês -->
             <div class="card">
               <h3>Captação e fotos no mês</h3>
 
@@ -279,7 +276,7 @@
               </label>
             </div>
 
-            <!-- Resumo e WhatsApp -->
+            <!-- Resumo + WhatsApp -->
             <aside class="card card--accent builder__summary">
               <h3>Resumo do escopo</h3>
               <ul class="bullets sm" id="bulletsResumo"></ul>
