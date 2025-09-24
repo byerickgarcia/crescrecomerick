@@ -4,7 +4,7 @@
   <meta charset="utf-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover" />
   <title>Erick Garcia — Conteúdo que Cresce Marca e Vendas</title>
-  <meta name="description" content="Operação diária de conteúdo para Instagram, TikTok e YouTube. Captação, edição, fotos e gestão com foco em audiência, autoridade e vendas. Agenda limitada." />
+  <meta name="description" content="Operação de social sob medida para Instagram, TikTok e YouTube. Captação, edição, fotos e gestão com foco em audiência, autoridade e vendas. Agenda limitada." />
   <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;600;700;800&display=swap" rel="stylesheet">
   <link rel="icon" href="favicon.ico">
   <link rel="stylesheet" href="styles.css">
@@ -25,7 +25,7 @@
       <nav id="menu" class="menu" aria-label="Navegação principal">
         <a href="#home">Início</a>
         <a href="#case">Resultados</a>
-        <a href="#solucoes">Soluções</a>
+        <a href="#solucoes">Sob Medida</a>
         <a href="#processo">Processo</a>
         <a href="#politicas">Políticas</a>
         <a class="btn btn--primary btn--small" target="_blank"
@@ -50,7 +50,7 @@
           <h1>Conteúdo que transforma atenção em crescimento real.</h1>
           <p>Operação completa de social: captação, edição, fotos e gestão. Estratégia clara, volume certo e execução impecável para escalar presença e negócios.</p>
           <div class="cta-row">
-            <a href="#solucoes" class="btn btn--primary btn--lg">Monte seu pacote</a>
+            <a href="#solucoes" class="btn btn--primary btn--lg">Montar meu pacote</a>
             <a href="#case" class="btn btn--ghost btn--lg">Ver provas de resultado</a>
           </div>
 
@@ -69,7 +69,7 @@
       </div>
     </section>
 
-    <!-- RESULTADOS (CASE) -->
+    <!-- RESULTADOS -->
     <section id="case" class="section">
       <div class="container">
         <h2>Resultados comprovados</h2>
@@ -134,14 +134,14 @@
       </div>
     </section>
 
-    <!-- SOLUÇÕES (CONFIGURADOR) -->
+    <!-- SOLUÇÕES (CONFIGURADOR SEM PREÇO) -->
     <section id="solucoes" class="section section--alt">
       <div class="container">
         <h2>Monte seu pacote sob medida</h2>
-        <p class="lead">Captação, edição, fotos e gestão. Selecione canais e volume ideal. Eu estruturo a operação e entrego o resultado.</p>
+        <p class="lead">Selecione seus canais e informe o volume que faz sentido para a sua marca. Eu retorno com a proposta ideal e o cronograma.</p>
 
         <div class="builder">
-          <form id="builderForm" class="builder__grid">
+          <form id="builderForm" class="builder__grid" onsubmit="return false;">
             <!-- Canais -->
             <div class="card">
               <h3>Canais</h3>
@@ -149,53 +149,110 @@
               <label class="chk"><input type="checkbox" name="tt"> TikTok</label>
               <label class="chk"><input type="checkbox" name="yt"> YouTube (vídeo longo)</label>
               <label class="chk"><input type="checkbox" name="shorts"> YouTube Shorts</label>
-              <p class="hint">YouTube/Shorts são opcionais e recomendados para escalar alcance e prova social.</p>
+              <p class="hint">Ativo pelo menos Instagram. TikTok e Shorts aumentam alcance e prova social.</p>
             </div>
 
-            <!-- Volume diário -->
+            <!-- Volume por SEMANA (sem limite) -->
             <div class="card">
-              <h3>Volume diário</h3>
-              <label class="rng">Reels por dia: <span id="outReels">1</span>
-                <input type="range" min="0" max="3" step="1" value="1" name="reelsPerDay">
+              <h3>Volume por semana</h3>
+
+              <label class="num">
+                <span>Reels / cortes por semana</span>
+                <div class="stepper">
+                  <button type="button" data-step="reels" data-dir="-">−</button>
+                  <input type="number" name="reelsWeek" min="0" step="1" value="7" inputmode="numeric" pattern="[0-9]*">
+                  <button type="button" data-step="reels" data-dir="+">+</button>
+                </div>
               </label>
-              <label class="rng">Posts/feed por dia: <span id="outPosts">1</span>
-                <input type="range" min="0" max="2" step="1" value="1" name="postsPerDay">
+
+              <label class="num">
+                <span>Posts de feed por semana</span>
+                <div class="stepper">
+                  <button type="button" data-step="posts" data-dir="-">−</button>
+                  <input type="number" name="postsWeek" min="0" step="1" value="7" inputmode="numeric" pattern="[0-9]*">
+                  <button type="button" data-step="posts" data-dir="+">+</button>
+                </div>
               </label>
-              <label class="rng">Stories por dia: <span id="outStories">1</span>
-                <input type="range" min="0" max="3" step="1" value="1" name="storiesPerDay">
+
+              <label class="num">
+                <span>Stories por semana</span>
+                <div class="stepper">
+                  <button type="button" data-step="stories" data-dir="-">−</button>
+                  <input type="number" name="storiesWeek" min="0" step="1" value="14" inputmode="numeric" pattern="[0-9]*">
+                  <button type="button" data-step="stories" data-dir="+">+</button>
+                </div>
               </label>
-              <p class="hint">Definimos os horários de pico e a linha editorial para manter retenção e cliques.</p>
+
+              <p class="hint">Use os botões ou digite qualquer número. Sem limite máximo.</p>
             </div>
 
-            <!-- Captação & Fotos -->
+            <!-- Captação & Fotos por MÊS -->
             <div class="card">
-              <h3>Captação e Fotos</h3>
-              <label class="rng">Visitas de captação/mês: <span id="outVisits">2</span>
-                <input type="range" min="1" max="4" step="1" value="2" name="visitsPerMonth">
+              <h3>Captação e Fotos (mês)</h3>
+
+              <label class="num">
+                <span>Visitas de captação no mês</span>
+                <div class="stepper">
+                  <button type="button" data-step="visits" data-dir="-">−</button>
+                  <input type="number" name="visitsMonth" min="0" step="1" value="2" inputmode="numeric" pattern="[0-9]*">
+                  <button type="button" data-step="visits" data-dir="+">+</button>
+                </div>
               </label>
-              <label class="rng">Fotos tratadas/mês: <span id="outPhotos">20</span>
-                <input type="range" min="10" max="60" step="5" value="20" name="photosPerMonth">
+
+              <label class="num">
+                <span>Fotos tratadas no mês</span>
+                <div class="stepper">
+                  <button type="button" data-step="photos" data-dir="-">−</button>
+                  <input type="number" name="photosMonth" min="0" step="1" value="20" inputmode="numeric" pattern="[0-9]*">
+                  <button type="button" data-step="photos" data-dir="+">+</button>
+                </div>
               </label>
+
               <p class="hint">Canon SL3 + iPhone 16 Pro Max + luz dedicada. Look consistente para feed e capas.</p>
             </div>
 
-            <!-- Estimativa -->
-            <div class="card card--accent">
-              <h3>Estimativa de investimento</h3>
-              <div class="price-xl"><span>R$</span><strong id="pricePreview">0</strong><small>/mês</small></div>
-              <ul class="bullets sm" id="bulletsResumo">
-                <!-- preenchido via JS -->
-              </ul>
+            <!-- Preferências -->
+            <div class="card">
+              <h3>Preferências</h3>
+              <label class="sel">
+                Linha editorial
+                <select name="editorial">
+                  <option value="institucional">Institucional</option>
+                  <option value="ofertas">Ofertas / comercial</option>
+                  <option value="autoridade" selected>Autoridade / conteúdo</option>
+                  <option value="eventos">Eventos / agenda</option>
+                </select>
+              </label>
+
+              <label class="sel">
+                Qualidade de edição
+                <select name="quality">
+                  <option value="basica">Básica</option>
+                  <option value="intermediaria" selected>Intermediária</option>
+                  <option value="premium">Premium</option>
+                </select>
+              </label>
+
+              <label class="txt">
+                Observações / links (opcional)
+                <textarea name="notes" rows="4" placeholder="Ex.: horários preferidos; referências; links de vídeos brutos; temas de campanha..."></textarea>
+              </label>
+            </div>
+
+            <!-- Resumo + WhatsApp -->
+            <div class="card card--accent builder__summary">
+              <h3>Resumo do seu escopo</h3>
+              <ul class="bullets sm" id="bulletsResumo"></ul>
               <a id="btnWhats" class="btn btn--dark btn--block" target="_blank" href="#">
-                Enviar meu escopo no WhatsApp
+                Enviar escopo no WhatsApp
               </a>
-              <p class="tiny">Valores podem variar conforme escopo e logística. Fechamento mediante proposta.</p>
+              <p class="tiny">Retorno com proposta e cronograma. Agenda limitada a até 3 clientes.</p>
             </div>
           </form>
         </div>
 
         <div class="notice">
-          <strong>Agenda limitada:</strong> trabalho com <b>até 3 clientes</b> para garantir execução no padrão alto que gera resultado. Contrato mensal com <b>50% na assinatura</b> e <b>50% no vencimento</b>.
+          <strong>Compromisso com resultado:</strong> foco em retenção, prova social e cliques. A execução é sob medida para a meta da marca, não um pacote engessado.
         </div>
       </div>
     </section>
@@ -233,7 +290,7 @@
           <div class="card">
             <h3>Agenda</h3>
             <ul class="bullets">
-              <li>Até 3 clientes simultâneos</li>
+              <li>Atendo até 3 clientes simultâneos</li>
               <li>Qualidade e velocidade acima de volume</li>
             </ul>
           </div>
@@ -261,7 +318,7 @@
     <section id="contato" class="cta">
       <div class="container">
         <h2>Vamos escalar sua presença e seu negócio</h2>
-        <p>Me chame no WhatsApp e montamos seu escopo sob medida em poucos minutos.</p>
+        <p>Me chame no WhatsApp e definimos seu escopo sob medida em poucos minutos.</p>
         <div class="cta-row cta-row--center">
           <a class="btn btn--dark btn--lg" target="_blank" href="https://wa.me/5543988632851">Falar no WhatsApp</a>
           <a class="btn btn--ghost btn--lg" href="#solucoes">Montar meu pacote</a>
