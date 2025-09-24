@@ -162,4 +162,121 @@
                 <input type="range" min="0" max="2" step="1" value="1" name="postsPerDay">
               </label>
               <label class="rng">Stories por dia: <span id="outStories">1</span>
-                <input type
+                <input type="range" min="0" max="3" step="1" value="1" name="storiesPerDay">
+              </label>
+              <p class="hint">Definimos os horários de pico e a linha editorial para manter retenção e cliques.</p>
+            </div>
+
+            <!-- Captação & Fotos -->
+            <div class="card">
+              <h3>Captação e Fotos</h3>
+              <label class="rng">Visitas de captação/mês: <span id="outVisits">2</span>
+                <input type="range" min="1" max="4" step="1" value="2" name="visitsPerMonth">
+              </label>
+              <label class="rng">Fotos tratadas/mês: <span id="outPhotos">20</span>
+                <input type="range" min="10" max="60" step="5" value="20" name="photosPerMonth">
+              </label>
+              <p class="hint">Canon SL3 + iPhone 16 Pro Max + luz dedicada. Look consistente para feed e capas.</p>
+            </div>
+
+            <!-- Estimativa -->
+            <div class="card card--accent">
+              <h3>Estimativa de investimento</h3>
+              <div class="price-xl"><span>R$</span><strong id="pricePreview">0</strong><small>/mês</small></div>
+              <ul class="bullets sm" id="bulletsResumo">
+                <!-- preenchido via JS -->
+              </ul>
+              <a id="btnWhats" class="btn btn--dark btn--block" target="_blank" href="#">
+                Enviar meu escopo no WhatsApp
+              </a>
+              <p class="tiny">Valores podem variar conforme escopo e logística. Fechamento mediante proposta.</p>
+            </div>
+          </form>
+        </div>
+
+        <div class="notice">
+          <strong>Agenda limitada:</strong> trabalho com <b>até 3 clientes</b> para garantir execução no padrão alto que gera resultado. Contrato mensal com <b>50% na assinatura</b> e <b>50% no vencimento</b>.
+        </div>
+      </div>
+    </section>
+
+    <!-- PROCESSO -->
+    <section id="processo" class="section">
+      <div class="container">
+        <h2>Processo que reduz atrito e acelera entrega</h2>
+        <div class="cards-4">
+          <div class="card">
+            <h3>1) Diagnóstico</h3>
+            <p>Meta clara e funil definido. Tom de voz, persona, ofertas e calendário saem daqui.</p>
+          </div>
+          <div class="card">
+            <h3>2) Captação</h3>
+            <p>Roteiros enxutos e captação ágil. Vídeo e foto com estética alinhada à marca.</p>
+          </div>
+          <div class="card">
+            <h3>3) Produção</h3>
+            <p>Edição com cortes de retenção, capas que clicam e copy que converte.</p>
+          </div>
+          <div class="card">
+            <h3>4) Publicação & Performance</h3>
+            <p>Programação, distribuição por canal e ajustes semanais a partir dos dados.</p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- POLÍTICAS -->
+    <section id="politicas" class="section">
+      <div class="container">
+        <h2>Políticas e Agenda</h2>
+        <div class="policies">
+          <div class="card">
+            <h3>Agenda</h3>
+            <ul class="bullets">
+              <li>Até 3 clientes simultâneos</li>
+              <li>Qualidade e velocidade acima de volume</li>
+            </ul>
+          </div>
+          <div class="card">
+            <h3>Contrato & Pagamento</h3>
+            <ul class="bullets">
+              <li>Contrato mensal</li>
+              <li>50% na assinatura; 50% no vencimento</li>
+              <li>Pix ou transferência</li>
+            </ul>
+          </div>
+          <div class="card">
+            <h3>Operação</h3>
+            <ul class="bullets">
+              <li>Quando não há visita, sua equipe envia brutos e eu mantenho o fluxo</li>
+              <li>Calendário e pauta com antecedência</li>
+              <li>Revisões objetivas por peça</li>
+            </ul>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- CTA -->
+    <section id="contato" class="cta">
+      <div class="container">
+        <h2>Vamos escalar sua presença e seu negócio</h2>
+        <p>Me chame no WhatsApp e montamos seu escopo sob medida em poucos minutos.</p>
+        <div class="cta-row cta-row--center">
+          <a class="btn btn--dark btn--lg" target="_blank" href="https://wa.me/5543988632851">Falar no WhatsApp</a>
+          <a class="btn btn--ghost btn--lg" href="#solucoes">Montar meu pacote</a>
+        </div>
+      </div>
+    </section>
+
+  </main>
+
+  <footer class="footer">
+    <div class="container">
+      © <span id="year"></span> Erick Garcia. Todos os direitos reservados.
+    </div>
+  </footer>
+
+  <script src="script.js"></script>
+</body>
+</html>
