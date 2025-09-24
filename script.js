@@ -1,4 +1,4 @@
-// NAV MOBILE
+// ===== NAV MOBILE =====
 const burger = document.getElementById('hamburger');
 const menu = document.getElementById('menu');
 if (burger && menu) {
@@ -9,11 +9,11 @@ if (burger && menu) {
   });
 }
 
-// FOOTER YEAR
+// ===== FOOTER YEAR =====
 const yearEl = document.getElementById('year');
 if (yearEl) yearEl.textContent = new Date().getFullYear();
 
-// SMOOTH SCROLL + fechar menu no mobile
+// ===== SMOOTH SCROLL =====
 document.querySelectorAll('a[href^="#"]').forEach(a => {
   a.addEventListener('click', (e) => {
     const id = a.getAttribute('href');
@@ -27,7 +27,7 @@ document.querySelectorAll('a[href^="#"]').forEach(a => {
   });
 });
 
-// CAROUSEL
+// ===== CAROUSEL =====
 function initCarousel(trackId){
   const track = document.querySelector(trackId);
   if (!track) return;
@@ -47,11 +47,11 @@ function initCarousel(trackId){
 initCarousel('#carousel-ig');
 initCarousel('#carousel-tt');
 
-// BUILDER
+// ===== BUILDER =====
 const $ = s => document.querySelector(s);
 const form = $('#builderForm');
 const bulletsResumo = $('#bulletsResumo');
-const btnWhats = $('#btnWhats');
+const btnSend = $('#sendScope');
 
 // impedir submit pelo Enter
 form?.addEventListener('keydown', (e) => {
@@ -59,25 +59,102 @@ form?.addEventListener('keydown', (e) => {
 });
 
 // steppers
-function setupStepper(name){
+function setupStepper(name, inputId){
   const minus = document.querySelector(`[data-step="${name}"][data-dir="-"]`);
   const plus  = document.querySelector(`[data-step="${name}"][data-dir="+"]`);
-  const input = form?.querySelector(`input[name="${name}Week"], input[name="${name}Month"], input[name="${name}"]`);
+  const input = document.getElementById(inputId);
   if (!input) return;
-  minus?.addEventListener('click', () => { input.value = Math.max(0, (+input.value||0) - 1); update(); });
-  plus?.addEventListener('click',  () => { input.value = (+input.value||0) + 1; update(); });
+  const updateVal = (d) => { input.value = Math.max(0, (+input.value||0) + d); update(); };
+  minus?.addEventListener('click', () => updateVal(-1));
+  plus?.addEventListener('click',  () => updateVal(+1));
 }
 
-['reels','posts','stories'].forEach(setupStepper);
-setupStepper('visits');
-setupStepper('photos');
+setupStepper('reels','reels');
+setupStepper('posts','posts');
+setupStepper('stories','stories');
+setupStepper('visits','captacoes');
+setupStepper('photos','photos');
 
 form?.addEventListener('input', update);
 form?.addEventListener('change', update);
 
-function valInt(name){
-  const el = form?.querySelector(`[name="${name}"]`);
-  return Math.max(0, parseInt(el?.value || '0', 10));
+function valInt(id){ return Math.max(0, parseInt(document.getElementById(id)?.value || '0', 10)); }
+function checked(id){ return document.getElementById(id)?.checked || false; }
+function escapeHtml(s){ return s.replace(/[&<>"']/g, m => ({'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;',"'":'&#39;'}[m])); }
+
+function update(){
+  if (!form) return;
+
+  // Canais
+  const canais = [];
+  if (checked('ig')) canais.push('Instagram');
+  if (checked('tt')) canais.push('TikTok');
+  if (checked('yt')) canais.push('YouTube vídeo longo');
+  if (checked('shorts')) canais.push('YouTube Shorts');
+  if (!checked('ig')) { document.getElementById('ig').checked = true; canais.unshift('Instagram'); }
+
+  // Volumes
+  const reels   = valInt('reels');
+  const posts   = valInt('posts');
+  const stories = valInt('stories');
+  const captacoes = valInt('captacoes');
+  const photos  = valInt('photos');
+
+  const linha   = document.getElementById('linha')?.value || 'Autoridade e conteúdo';
+  const quality = document.getElementById('quality')?.value || 'Intermediária';
+  const extras  = (document.getElementById('extras')?.value || '').trim();
+
+  // mensal (4.3 semanas)
+  const reelsM   = Math.round(reels * 4.3);
+  const postsM   = Math.round(posts * 4.3);
+  const storiesM = Math.round(stories * 4.3);
+
+  // resumo
+  bulletsResumo.innerHTML = `
+    <li><b>Canais</b> ${canais.join('  ')}</li>
+    <li><b>Reels/semana</b> ${reels}  <b>Posts/semana</b> ${posts}  <b>Stories/semana</b> ${stories}</li>
+    <li><b>Estimativa mensal</b> ${reelsM} reels  ${postsM} posts  ${storiesM} stories</li>
+    <li><b>Captação</b> ${captacoes} visita(s)/mês  <b>Fotos tratadas</b> ${photos}/mês</li>
+    <li><b>Linha editorial</b> ${linha}  <b>Edição</b> ${quality}</li>
+    ${extras ? `<li><b>Observações</b> ${escapeHtml(extras)}</li>` : ``}
+  `;
+
+  // guarda a mensagem pronta no botão
+  const lines = [
+    'Ola Erick, segue meu escopo sob medida:',
+    `- Canais: ${canais.join(', ')}`,
+    `- Volume por semana: ${reels} reels, ${posts} posts, ${stories} stories`,
+    `- Estimativa mensal: ${reelsM} reels, ${postsM} posts, ${storiesM} stories`,
+    `- Captação: ${captacoes} visita(s)/mês`,
+    `- Fotos tratadas: ${photos}/mês`,
+    `- Linha editorial: ${linha}`,
+    `- Qualidade de edição: ${quality}`,
+    extras ? `- Observações: ${extras}` : null,
+    'Aguardo a proposta com contrato mensal  50 por cento na assinatura e 50 por cento no vencimento.'
+  ].filter(Boolean).join('\n');
+
+  btnSend.dataset.msg = encodeURIComponent(lines);
 }
-function checked(name){
-  const el = form?.querySelector(`[name="${name
+update();
+
+// abrir WhatsApp sem refresh
+btnSend?.addEventListener('click', (e) => {
+  e.preventDefault();
+  const msg = btnSend.dataset.msg || '';
+  const phone = '5543988632851';
+  const url = `https://wa.me/${phone}?text=${msg}`;
+  window.open(url, '_blank', 'noopener,noreferrer');
+});
+
+// ===== Chips fallback (classe is-checked se o :has não aplicar) =====
+document.querySelectorAll('.chip input[type="checkbox"]').forEach(inp => {
+  const label = inp.closest('.chip');
+  const sync = () => label.classList.toggle('is-checked', inp.checked);
+  inp.addEventListener('change', () => { sync(); update(); });
+  label.addEventListener('keydown', (e) => {
+    if (e.key === ' ' || e.key === 'Enter') {
+      e.preventDefault(); inp.checked = !inp.checked; inp.dispatchEvent(new Event('change'));
+    }
+  });
+  sync();
+});
