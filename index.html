@@ -3,219 +3,263 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Erick Garcia | Social Media, Fotógrafo e Videomaker de Alto Impacto</title>
+    <title>Erick Garcia | Estrategista de Conteúdo de Elite - ROI Garantido</title>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600;800&display=swap" rel="stylesheet">
     <style>
-        /* Estilos CSS simplificados e responsivos (Mobile-First) */
+        /* Variáveis de Cores Premium */
         :root {
-            --primary-color: #ff5722; /* Laranja/Cobre - Cor de alto valor e energia */
-            --secondary-color: #00bcd4; /* Ciano/Turquesa - Profissionalismo e Inovação */
-            --dark-bg: #111111;
-            --light-text: #f8f8f8;
-            --card-bg: #1a1a1a;
+            --primary-color: #B8860B; /* Cobre/Dourado - Cor de Exclusividade */
+            --secondary-color: #00bcd4; /* Ciano - Destaque de Dados */
+            --dark-bg: #0a0a0a; /* Preto Profundo */
+            --light-text: #f0f0f0;
+            --card-bg: #181818;
+            --border-color: #333;
         }
 
         body {
-            font-family: 'Poppins', sans-serif; /* Adotando uma fonte moderna (Simulação) */
+            font-family: 'Poppins', sans-serif;
             margin: 0;
             padding: 0;
             background-color: var(--dark-bg);
             color: var(--light-text);
-            line-height: 1.6;
+            line-height: 1.7;
             overflow-x: hidden;
+            letter-spacing: 0.5px;
         }
 
         .container {
-            max-width: 1100px;
+            max-width: 1200px;
             margin: 0 auto;
-            padding: 0 15px;
+            padding: 0 20px;
         }
 
+        /* --- HEADER/HERO Section --- */
         header {
             text-align: center;
-            padding: 40px 0 20px 0;
+            padding: 80px 0 60px 0;
             background: #000;
         }
 
-        h1, h2, h3 {
-            font-weight: 800;
-            line-height: 1.2;
-            margin-top: 0;
+        .profile-img {
+            width: 140px;
+            height: 140px;
+            border-radius: 50%;
+            object-fit: cover;
+            border: 4px solid var(--primary-color);
+            margin-bottom: 30px;
+            box-shadow: 0 0 25px rgba(184, 134, 11, 0.6);
         }
 
         h1 {
-            font-size: 2rem;
-            color: var(--light-text);
-            margin-bottom: 5px;
+            font-size: 3rem;
+            font-weight: 800;
+            line-height: 1.1;
+            margin: 10px 0 20px 0;
+            text-transform: uppercase;
         }
-        
-        /* Destaque para Palavras Chave */
-        .highlight {
+
+        h1 .highlight {
             color: var(--primary-color);
         }
-
-        header p {
-            font-size: 1rem;
-            max-width: 650px;
-            margin: 10px auto 30px auto;
-            color: #ccc;
+        
+        .supra-title {
+            font-size: 0.9rem;
+            color: #aaa;
+            font-weight: 600;
+            letter-spacing: 2px;
+            text-transform: uppercase;
         }
 
-        .profile-img {
-            width: 150px;
-            height: 150px;
-            border-radius: 50%;
-            object-fit: cover;
-            border: 5px solid var(--primary-color);
-            margin-bottom: 20px;
-            box-shadow: 0 0 20px rgba(255, 87, 34, 0.5); /* Sombra para reforçar exclusividade */
+        .hero-description {
+            font-size: 1.1rem;
+            max-width: 700px;
+            margin: 20px auto 40px auto;
+            color: #ccc;
         }
 
         .cta-button {
             display: inline-block;
             background-color: var(--primary-color);
-            color: white;
-            padding: 15px 35px;
+            color: #000; /* Texto escuro em fundo cobre */
+            padding: 18px 40px;
             text-decoration: none;
-            font-weight: bold;
-            border-radius: 8px;
-            font-size: 1.15rem;
-            transition: background-color 0.3s;
-            margin-top: 25px;
-            box-shadow: 0 4px 20px rgba(255, 87, 34, 0.4);
-            letter-spacing: 1px;
+            font-weight: 800;
+            border-radius: 4px;
+            font-size: 1.2rem;
+            transition: background-color 0.3s, transform 0.2s;
+            box-shadow: 0 8px 20px rgba(184, 134, 11, 0.5);
             text-transform: uppercase;
         }
 
         .cta-button:hover {
-            background-color: #e64a19;
+            background-color: #cc9933;
+            transform: translateY(-2px);
         }
 
-        /* Seções */
+        /* --- Sections & Titles --- */
         section {
-            padding: 60px 0;
-            border-top: 1px solid #222;
+            padding: 80px 0;
+            border-top: 1px solid var(--border-color);
         }
 
-        .value-prop h2, .case-study h2, .custom-plan h2 {
+        h2 {
             text-align: center;
-            color: var(--secondary-color);
-            margin-bottom: 40px;
-            font-size: 2.2rem;
+            font-size: 2.5rem;
+            font-weight: 800;
+            color: var(--light-text);
+            margin-bottom: 20px;
+        }
+        
+        .section-subtitle {
+            text-align: center;
+            color: var(--primary-color);
+            font-size: 1.1rem;
+            margin-bottom: 60px;
+            font-weight: 600;
             text-transform: uppercase;
         }
 
-        /* Prova Social */
+        /* --- Value Proposition Grid --- */
+        .value-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 30px;
+        }
+
+        .value-card {
+            background-color: var(--card-bg);
+            padding: 30px;
+            border-radius: 8px;
+            border-top: 5px solid var(--secondary-color);
+        }
+
+        .value-card h3 {
+            color: var(--secondary-color);
+            font-size: 1.5rem;
+            font-weight: 600;
+            margin-bottom: 10px;
+        }
+        
+        /* --- Case Study/Proof Section --- */
         .case-study {
             background-color: #000;
         }
 
-        .results-grid {
-            display: flex;
-            flex-wrap: wrap;
-            gap: 25px;
-            justify-content: center;
+        .stats-container {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
+            gap: 30px;
+            margin-bottom: 50px;
         }
 
-        .result-card {
+        .stat-block {
             background-color: var(--card-bg);
-            padding: 25px;
-            border-radius: 12px;
-            flex: 1 1 calc(50% - 25px); 
-            box-shadow: 0 5px 20px rgba(0, 0, 0, 0.5);
-            min-width: 300px;
-            transition: transform 0.3s;
-        }
-        
-        .result-card:hover {
-            transform: translateY(-5px);
+            padding: 30px;
+            border-radius: 8px;
+            border: 1px solid var(--border-color);
         }
 
-        .result-card h3 {
+        .stat-block h3 {
             color: var(--primary-color);
-            font-size: 1.5rem;
+            font-size: 1.8rem;
             margin-bottom: 15px;
-            border-bottom: 2px solid #333;
-            padding-bottom: 8px;
+            font-weight: 800;
         }
 
         .stats-list {
             list-style: none;
             padding: 0;
-            font-size: 1.05rem;
         }
 
         .stats-list li {
-            padding: 10px 0;
-            border-bottom: 1px dashed #2a2a2a;
+            font-size: 1rem;
+            margin-bottom: 10px;
+            border-left: 3px solid var(--secondary-color);
+            padding-left: 10px;
         }
 
         .stats-list strong {
             color: var(--secondary-color);
+            font-weight: 600;
         }
 
-        /* Galeria de Provas (Carrossel) */
-        .proof-gallery {
-            margin-top: 50px;
-            overflow-x: scroll;
-            white-space: nowrap;
-            padding-bottom: 15px;
-            -webkit-overflow-scrolling: touch;
+        /* Gallery Grid (Sem Carrossel) */
+        .proof-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+            gap: 15px;
+            margin-top: 40px;
+        }
+
+        .proof-grid img {
+            width: 100%;
+            height: auto;
+            border-radius: 4px;
+            object-fit: cover;
+            transition: transform 0.3s;
+            border: 1px solid var(--border-color);
+        }
+        
+        .proof-grid img:hover {
+            transform: scale(1.02);
+            box-shadow: 0 0 15px rgba(184, 134, 11, 0.4);
+        }
+        
+        /* --- Custom Plan CTA --- */
+        .custom-plan {
             text-align: center;
         }
-
-        .proof-gallery img {
-            width: 85vw; 
-            max-width: 400px;
-            height: auto;
-            margin-right: 20px;
-            border-radius: 8px;
-            display: inline-block;
-            border: 1px solid #333;
-        }
         
-        .proof-gallery::-webkit-scrollbar {
-            height: 8px;
-        }
-
-        .proof-gallery::-webkit-scrollbar-thumb {
-            background: var(--primary-color);
-            border-radius: 10px;
-        }
-        
-        /* Plano Personalizado */
         .plan-guide {
             background: var(--card-bg);
-            padding: 35px;
-            border-radius: 12px;
-            max-width: 750px;
-            margin: 0 auto;
-            border: 1px solid #333;
+            padding: 40px;
+            border-radius: 8px;
+            max-width: 800px;
+            margin: 40px auto;
+            border: 2px solid var(--primary-color);
+        }
+        
+        .plan-guide p {
+            font-size: 1.1rem;
+            color: #ccc;
+        }
+
+        .plan-guide strong {
+            color: var(--primary-color);
         }
 
         .plan-guide ul {
-            list-style-type: none;
-            padding-left: 0;
-            margin-top: 20px;
+            list-style: none;
+            padding: 0;
+            text-align: left;
+            margin: 30px 0;
         }
         
         .plan-guide li {
             background: #222;
             padding: 15px;
             margin-bottom: 10px;
-            border-left: 4px solid var(--primary-color);
+            border-left: 5px solid var(--secondary-color);
             border-radius: 4px;
         }
+
+        /* --- Footer --- */
+        footer {
+            text-align: center;
+            padding: 30px 0;
+            background-color: #000;
+            font-size: 0.8rem;
+            color: #555;
+            border-top: 1px solid var(--border-color);
+        }
         
-        /* Responsividade */
-        @media (min-width: 768px) {
+        /* Responsividade para telas muito pequenas */
+        @media (max-width: 480px) {
             h1 {
-                font-size: 3rem;
+                font-size: 2rem;
             }
-            .result-card {
-                flex: 1 1 calc(50% - 25px); 
-            }
-            .proof-gallery img {
-                width: 300px; 
+            .stats-container, .value-grid {
+                grid-template-columns: 1fr;
             }
         }
     </style>
@@ -224,67 +268,67 @@
 
     <header>
         <div class="container">
-            <img src="https://i.ibb.co/wNSqt4HG/IMG-1308.png" alt="Erick Garcia - Social Media, Fotógrafo e Videomaker" class="profile-img">
+            <img src="https://i.ibb.co/wNSqt4HG/IMG-1308.png" alt="Erick Garcia - Estrategista de Conteúdo de Elite" class="profile-img">
 
-            <p style="font-size: 1rem; color: var(--primary-color); font-weight: 700; text-transform: uppercase;">O MARKETING QUE VOCÊ TENTA FAZER HOJE ESTÁ CUSTANDO A SUA AUTORIDADE.</p>
-            <h1>Eu sou **Erick Garcia**, e meu trabalho é para <span class="highlight">QUEM ESTÁ PRONTO PARA INVESTIR</span> em resultados.</h1>
-            <p>Em 132 dias, gerei mais de **15 Milhões** de visualizações, transformando perfis estagnados em máquinas de lucro. Eu sou a sua produtora e estrategista completa.</p>
+            <p class="supra-title">O MARKETING AMADOR ESTÁ CUSTANDO SEU LUCRO.</p>
+            <h1>Eu sou <span class="highlight">ERICK GARCIA</span>, e meu trabalho é para quem está pronto para <span class="highlight">INVESTIR EM RESULTADOS</span>.</h1>
+            <p class="hero-description">Em 132 dias, gerei mais de **15 Milhões** de visualizações e transformei perfis estagnados em **máquinas de captação**. Eu sou a Produtora, Estrategista e Analista de ROI que você precisa.</p>
 
-            <a href="https://wa.me/5543988632851?text=Ol%C3%A1%2C%20Erick.%20Quero%20agendar%20minha%20consulta%20para%20o%20Plano%20Exclusivo." class="cta-button">
-                NÃO TENHO VAGAS PARA AMADORES. Monte seu plano agora.
+            <a href="https://wa.me/5543988632851?text=Ol%C3%A1%2C%20Erick.%20Quero%20agendar%20minha%20consulta%20para%20o%20Plano%20de%20Investimento%20Exclusivo." class="cta-button">
+                MINHA AGENDA É FECHADA. INICIE A SUA CANDIDATURA AGORA.
             </a>
         </div>
     </header>
 
     <section class="value-prop">
         <div class="container">
-            <h2>A DIFERENÇA ENTRE POSTAR E DOMINAR.</h2>
-            <p style="text-align: center; max-width: 800px; margin: 0 auto 50px auto;">**O meu valor é o custo de não ter os meus resultados.** 99% dos "Social Medias" são apenas agendadores. Eu entrego a **Provas Social, o Vídeo de Cinema e a Estratégia de Persuasão** necessária para um investimento de alto nível.</p>
+            <h2>O CUSTO DA EXPECTATIVA VS. O INVESTIMENTO NA CERTEZA.</h2>
+            <p class="section-subtitle">Eu não sou um freelancer; sou um investimento. Eu sou o seu estúdio completo de produção e estratégia, focado em **ROI**. </p>
             
-            <div class="results-grid">
-                <div class="result-card">
-                    <h3>ESTRATÉGIA DE AUTORIDADE</h3>
-                    <p>Foco na dependência da audiência. Roteiro e táticas de escassez que transformam seguidores em clientes prontos para pagar o seu valor.</p>
+            <div class="value-grid">
+                <div class="value-card">
+                    <h3>ESTRATÉGIA DE ALTO VALOR</h3>
+                    <p>Foco em **persuasão, escassez e autoridade**. Desenho o roteiro de conteúdo que transforma sua audiência em clientes dispostos a pagar o seu preço.</p>
                 </div>
-                <div class="result-card">
-                    <h3>PRODUÇÃO DE VÍDEO CINEMATOGRÁFICA</h3>
-                    <p>Captação em 4K com câmeras Full-Frame e lentes Prime. Seu conteúdo terá a qualidade de uma produção profissional. **Seu negócio merece o melhor.**</p>
+                <div class="value-card">
+                    <h3>PRODUÇÃO DE ELITE (FOTO & VÍDEO)</h3>
+                    <p>Captação em 4K, equipamentos Full-Frame e iluminação profissional. Seu conteúdo terá a **qualidade de uma campanha publicitária**, justificando seu posicionamento.</p>
                 </div>
-                <div class="result-card">
-                    <h3>FOTOGRAFIA QUE VENDE</h3>
-                    <p>Imagens com alto poder de comunicação. Sessões fotográficas que não são apenas estéticas, mas que elevam seu posicionamento de mercado e justificam o preço.</p>
+                <div class="value-card">
+                    <h3>ANÁLISE E DEPENDÊNCIA</h3>
+                    <p>Meu trabalho não para na postagem. Analiso as métricas de monetização e crio uma **dependência** da sua audiência para que seu negócio se torne insubstituível.</p>
                 </div>
             </div>
-            <p style="text-align: center; margin-top: 40px; font-size: 0.9rem; color: #777;">**MEUS EQUIPAMENTOS:** Câmeras Full-Frame, lentes Prime, estabilizadores profissionais e kits de áudio e iluminação de estúdio. Este é o investimento que faço pelo seu sucesso.</p>
+            <p style="text-align: center; margin-top: 50px; font-size: 0.9rem; color: #555;">**EQUIPAMENTOS:** Câmeras Full-Frame, lentes Prime, estabilizadores de cinema e kits de áudio/iluminação de estúdio. **O valor do meu serviço é a segurança do seu resultado.**</p>
         </div>
     </section>
 
     <section class="case-study">
         <div class="container">
-            <h2>O INVESTIMENTO QUE SE PAGA EM RESULTADOS REAIS.</h2>
-            <p style="text-align: center; font-style: italic; color: #ccc;">Veja o que aconteceu em apenas 132 dias (11/MAI a 20/SET/2025) com um cliente que **decidiu investir** no serviço completo:</p>
+            <h2>PROVA SOCIAL: O INVESTIMENTO QUE SE PAGA EM 132 DIAS.</h2>
+            <p class="section-subtitle">Veja o crescimento explosivo de um cliente que entendeu o valor de investir em produção de nível executivo. (11/MAI a 20/SET/2025)</p>
 
-            <div class="results-grid">
-                <div class="result-card" style="border: 2px solid var(--secondary-color);">
-                    <h3>🚀 TIKTOK: MAIS DE R$ 3.800 DE LUCRO DIRETO</h3>
+            <div class="stats-container">
+                <div class="stat-block">
+                    <h3>TIKTOK: LUCRATIVIDADE E ESCALA</h3>
                     <ul class="stats-list">
                         <li>**Faturamento Direto:** **R$ 3.848,21** em Recompensas Estimadas.</li>
-                        <li>**Crescimento:** De 4K para **62,5 Mil Seguidores** (Explosão de 1990% no volume).</li>
-                        <li>**Impacto:** **13 Milhões** de Visualizações e **1,5 Milhão** de Curtidas.</li>
+                        <li>**Crescimento:** De 4K para **62,5 Mil Seguidores** (+1990% no volume total).</li>
+                        <li>**Engajamento:** Mais de **13 Milhões** de Views e **1,5 Milhão** de Curtidas.</li>
                     </ul>
                 </div>
-                <div class="result-card" style="border: 2px solid var(--primary-color);">
-                    <h3>📈 INSTAGRAM: DOMÍNIO DE AUTORIDADE (+712% VIEWS)</h3>
+                <div class="stat-block">
+                    <h3>INSTAGRAM: AUTORIDADE INCONTESTÁVEL</h3>
                     <ul class="stats-list">
                         <li>**Visualizações:** Aumento de **+712%** (Mais de **15,2 Milhões** de Views).</li>
-                        <li>**Engajamento:** Aumento de **+840%** em Interações.</li>
-                        <li>**Audiência:** De 56K para **114 Mil Seguidores** (Mais que dobrou em 4 meses).</li>
+                        <li>**Interações:** Aumento de **+840%** em Engajamento.</li>
+                        <li>**Audiência:** De 56K para **114 Mil Seguidores** em 4 meses.</li>
                     </ul>
                 </div>
             </div>
 
-            <h3 style="text-align: center; margin-top: 60px; color: var(--light-text); font-weight: 700;">PROVA SOCIAL: OS PRINTS QUE VALEM MAIS QUE MIL PALAVRAS</h3>
-            <div class="proof-gallery">
+            <h3 style="text-align: center; margin-top: 50px; color: var(--primary-color); font-weight: 600;">VISUALIZE OS DADOS BRUTOS QUE COMPROVAM O RESULTADO:</h3>
+            <div class="proof-grid">
                 <img src="https://i.ibb.co/rKTSY3KL/tiktok-01.jpg" alt="Prova TikTok Estatísticas de Engajamento">
                 <img src="https://i.ibb.co/5WVrDxcc/tiktok-02.jpg" alt="Prova TikTok Análise de Recompensas Monetárias">
                 <img src="https://i.ibb.co/LdWy8VXK/tiktok-perfil.jpg" alt="Prova TikTok Perfil Seguidores">
@@ -295,31 +339,32 @@
         </div>
     </section>
     
-    <section class="custom-plan" style="background-color: #0d0d0d; padding: 60px 0;">
+    <section class="custom-plan">
         <div class="container">
-            <h2>NÃO É UM PACOTE. É UM PLANO DE INVESTIMENTO EXCLUSIVO.</h2>
-            <p style="text-align: center; font-size: 1.2rem; color: #ccc;">O valor do meu trabalho é a soma da sua necessidade com a minha execução de alto nível. **Não desperdiçamos tempo.** Você define a sua ambição, e eu entrego o preço que ela custa.</p>
+            <h2>AGENDA EXCLUSIVA: MONTE SEU PLANO DE INVESTIMENTO.</h2>
+            <p class="section-subtitle">Meu valor é proporcional à sua ambição. O preço é o custo do seu resultado. </p>
             
             <div class="plan-guide">
-                <h3 style="color: var(--secondary-color);">SEU PLANO DE AÇÃO: O QUE VOCÊ ESTÁ PRONTO PARA FAZER?</h3>
-                <p style="font-size: 1rem; color: #bbb;">**Copie e cole a estrutura abaixo no WhatsApp, preenchendo com a sua meta:**</p>
+                <p style="font-weight: 600; font-size: 1.2rem;">**PRIMEIRO FILTRO:** Não trabalhamos com planos prontos. Para cotar seu projeto, você deve demonstrar clareza sobre o nível de execução que exige.</p>
+                
+                <h3 style="color: var(--secondary-color); font-weight: 800; margin-top: 30px;">COPIE E ENVIE ESTA COTAÇÃO VIA WHATSAPP:</h3>
                 <ul>
-                    <li>**1. Frequência de Produção:** Quantas diárias de 3 horas por semana/quinzena são necessárias para capturar fotos e vídeos brutos?</li>
-                    <li>**2. Entrega Semanal:** Qual o volume exato de Reels/TikToks e Fotos finalizados que você exige?</li>
-                    <li>**3. Canais & Gestão:** Quais plataformas (IG/TT/YT) farão parte da estratégia?</li>
-                    <li>**4. O Seu Objetivo:** Qual é a sua meta (Ex: Vender $X mil, Dobrar Seguidores, Construir Autoridade)?</li>
+                    <li>**1. Produção (Frequência):** Quantas diárias de 3 horas por semana você exige para captação de material bruto (Foto/Vídeo)?</li>
+                    <li>**2. Entrega (Volume):** Qual o volume mínimo semanal de Reels/TikToks e fotos finalizadas que você espera?</li>
+                    <li>**3. Gestão (Canais):** Quais plataformas (IG, TT, YT) demandarão análise e gestão de performance?</li>
+                    <li>**4. Meta (ROI):** Qual é o seu objetivo financeiro ou de autoridade que justifica este investimento?</li>
                 </ul>
-                <p style="font-weight: bold; margin-top: 30px; text-align: center; color: var(--primary-color);">**AVISO DE ESCASSEZ:** Minha agenda é restrita. O processo de negociação só começa após o envio deste plano.</p>
+                <p style="font-weight: bold; margin-top: 30px; color: var(--primary-color); text-transform: uppercase;">**SÓ APÓS ANALISAR SEU PLANO, REVELAREI O INVESTIMENTO NECESSÁRIO.**</p>
             </div>
             
-            <a href="https://wa.me/5543988632851?text=Ol%C3%A1%2C%20Erick.%20Meu%20Plano%20de%20Investimento%20Personalizado%20%C3%A9%3A%20%5BInsira%20seu%20plano%20aqui%5D" class="cta-button" style="background-color: var(--secondary-color);">
-                ENVIAR MEU PLANO (Inicie a Consulta)
+            <a href="https://wa.me/5543988632851?text=Ol%C3%A1%2C%20Erick.%20Meu%20Plano%20de%20Investimento%20Personalizado%20%C3%A9%3A%20%5BInsira%20seu%20plano%20aqui%5D" class="cta-button">
+                ENVIAR MINHA COTAÇÃO DE ELITE PARA WHATSAPP
             </a>
         </div>
     </section>
 
-    <footer style="text-align: center; padding: 20px 0; background-color: #000; font-size: 0.8rem; color: #555;">
-        Erick Garcia - Social Media, Fotógrafo e Videomaker. O investimento é diretamente proporcional ao resultado.
+    <footer>
+        Erick Garcia - Estrategista de Conteúdo de Elite. | Contato: +55 43 98863‑2851.
     </footer>
 
 </body>
