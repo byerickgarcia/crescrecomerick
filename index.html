@@ -134,7 +134,7 @@
       </div>
     </section>
 
-    <!-- SOLUÇÕES SOB MEDIDA -->
+    <!-- ESCOPOS SOB MEDIDA -->
     <section id="solucoes" class="section section--alt">
       <div class="container">
         <h2>Monte seu escopo sob medida</h2>
@@ -142,12 +142,13 @@
 
         <div class="builder">
           <form id="builderForm" class="builder__grid" onsubmit="return false;">
+
             <!-- Canais -->
             <div class="card">
               <h3>Canais</h3>
               <div class="chips" role="group" aria-label="Seleção de canais">
                 <label class="chip" tabindex="0">
-                  <input type="checkbox" name="ig" checked aria-label="Instagram">
+                  <input type="checkbox" name="ig" id="ig" checked aria-label="Instagram">
                   <span class="chip__content">
                     <svg class="chip__check" width="16" height="16" viewBox="0 0 16 16" aria-hidden="true">
                       <path fill="currentColor" d="M6.6 11.2L3.7 8.3l-1 1 3.9 3.9 7-7-1-1-6 6z"/>
@@ -157,7 +158,7 @@
                 </label>
 
                 <label class="chip" tabindex="0">
-                  <input type="checkbox" name="tt" aria-label="TikTok">
+                  <input type="checkbox" name="tt" id="tt" aria-label="TikTok">
                   <span class="chip__content">
                     <svg class="chip__check" width="16" height="16" viewBox="0 0 16 16" aria-hidden="true">
                       <path fill="currentColor" d="M6.6 11.2L3.7 8.3l-1 1 3.9 3.9 7-7-1-1-6 6z"/>
@@ -167,7 +168,7 @@
                 </label>
 
                 <label class="chip" tabindex="0">
-                  <input type="checkbox" name="yt" aria-label="YouTube vídeo longo">
+                  <input type="checkbox" name="yt" id="yt" aria-label="YouTube vídeo longo">
                   <span class="chip__content">
                     <svg class="chip__check" width="16" height="16" viewBox="0 0 16 16" aria-hidden="true">
                       <path fill="currentColor" d="M6.6 11.2L3.7 8.3l-1 1 3.9 3.9 7-7-1-1-6 6z"/>
@@ -177,7 +178,7 @@
                 </label>
 
                 <label class="chip" tabindex="0">
-                  <input type="checkbox" name="shorts" aria-label="YouTube Shorts">
+                  <input type="checkbox" name="shorts" id="shorts" aria-label="YouTube Shorts">
                   <span class="chip__content">
                     <svg class="chip__check" width="16" height="16" viewBox="0 0 16 16" aria-hidden="true">
                       <path fill="currentColor" d="M6.6 11.2L3.7 8.3l-1 1 3.9 3.9 7-7-1-1-6 6z"/>
@@ -197,7 +198,7 @@
                 <span>Reels ou cortes por semana</span>
                 <div class="stepper">
                   <button type="button" data-step="reels" data-dir="-">−</button>
-                  <input type="number" name="reelsWeek" min="0" step="1" value="7" inputmode="numeric" pattern="[0-9]*" aria-label="Reels por semana">
+                  <input type="number" id="reels" min="0" step="1" value="7" inputmode="numeric" pattern="[0-9]*" aria-label="Reels por semana">
                   <button type="button" data-step="reels" data-dir="+">+</button>
                 </div>
               </label>
@@ -206,7 +207,7 @@
                 <span>Posts de feed por semana</span>
                 <div class="stepper">
                   <button type="button" data-step="posts" data-dir="-">−</button>
-                  <input type="number" name="postsWeek" min="0" step="1" value="7" inputmode="numeric" pattern="[0-9]*" aria-label="Posts por semana">
+                  <input type="number" id="posts" min="0" step="1" value="7" inputmode="numeric" pattern="[0-9]*" aria-label="Posts por semana">
                   <button type="button" data-step="posts" data-dir="+">+</button>
                 </div>
               </label>
@@ -215,7 +216,7 @@
                 <span>Stories por semana</span>
                 <div class="stepper">
                   <button type="button" data-step="stories" data-dir="-">−</button>
-                  <input type="number" name="storiesWeek" min="0" step="1" value="14" inputmode="numeric" pattern="[0-9]*" aria-label="Stories por semana">
+                  <input type="number" id="stories" min="0" step="1" value="14" inputmode="numeric" pattern="[0-9]*" aria-label="Stories por semana">
                   <button type="button" data-step="stories" data-dir="+">+</button>
                 </div>
               </label>
@@ -231,7 +232,7 @@
                 <span>Visitas de captação no mês</span>
                 <div class="stepper">
                   <button type="button" data-step="visits" data-dir="-">−</button>
-                  <input type="number" name="visitsMonth" min="0" step="1" value="2" inputmode="numeric" pattern="[0-9]*" aria-label="Visitas por mês">
+                  <input type="number" id="captacoes" min="0" step="1" value="2" inputmode="numeric" pattern="[0-9]*" aria-label="Visitas por mês">
                   <button type="button" data-step="visits" data-dir="+">+</button>
                 </div>
               </label>
@@ -240,7 +241,7 @@
                 <span>Fotos tratadas no mês</span>
                 <div class="stepper">
                   <button type="button" data-step="photos" data-dir="-">−</button>
-                  <input type="number" name="photosMonth" min="0" step="1" value="20" inputmode="numeric" pattern="[0-9]*" aria-label="Fotos por mês">
+                  <input type="number" id="photos" min="0" step="1" value="20" inputmode="numeric" pattern="[0-9]*" aria-label="Fotos por mês">
                   <button type="button" data-step="photos" data-dir="+">+</button>
                 </div>
               </label>
@@ -253,26 +254,26 @@
               <h3>Preferências</h3>
               <label class="sel">
                 Linha editorial
-                <select name="editorial" aria-label="Linha editorial">
-                  <option value="institucional">Institucional</option>
-                  <option value="ofertas">Ofertas e comercial</option>
-                  <option value="autoridade" selected>Autoridade e conteúdo</option>
-                  <option value="eventos">Eventos e agenda</option>
+                <select id="linha" aria-label="Linha editorial">
+                  <option value="Institucional">Institucional</option>
+                  <option value="Ofertas e comercial">Ofertas e comercial</option>
+                  <option value="Autoridade e conteúdo" selected>Autoridade e conteúdo</option>
+                  <option value="Eventos e agenda">Eventos e agenda</option>
                 </select>
               </label>
 
               <label class="sel">
                 Qualidade de edição
-                <select name="quality" aria-label="Qualidade de edição">
-                  <option value="basica">Básica</option>
-                  <option value="intermediaria" selected>Intermediária</option>
-                  <option value="premium">Premium</option>
+                <select id="quality" aria-label="Qualidade de edição">
+                  <option value="Básica">Básica</option>
+                  <option value="Intermediária" selected>Intermediária</option>
+                  <option value="Premium">Premium</option>
                 </select>
               </label>
 
               <label class="txt">
                 Observações ou links
-                <textarea name="notes" rows="4" placeholder="Exemplos  horários preferidos  referências  links de vídeos brutos  temas de campanha"></textarea>
+                <textarea id="extras" rows="4" placeholder="Exemplos  horários preferidos  referências  links de vídeos brutos  temas de campanha"></textarea>
               </label>
             </div>
 
@@ -280,8 +281,8 @@
             <aside class="card card--accent builder__summary">
               <h3>Resumo do escopo</h3>
               <ul class="bullets sm" id="bulletsResumo"></ul>
-              <button id="btnWhats" type="button" class="btn btn--dark btn--block">
-                Enviar escopo no WhatsApp
+              <button id="sendScope" type="button" class="btn btn--dark btn--block">
+                Enviar escopo pelo WhatsApp
               </button>
               <p class="tiny">Retorno com proposta e cronograma. Contrato mensal  50 por cento na assinatura e 50 por cento no vencimento.</p>
             </aside>
