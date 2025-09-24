@@ -91,13 +91,21 @@ h2{font-size:clamp(1.6rem,2.4vw,2.3rem);letter-spacing:-.02em}
 .builder{margin-top:18px}
 .builder__grid{display:grid;grid-template-columns:repeat(4,1fr);gap:16px}
 .chk{display:flex;align-items:center;gap:10px;margin:8px 0}
-.rng{display:block;margin:12px 0}
-.rng input[type="range"]{width:100%}
+.sel select, .txt textarea, .num input[type="number"]{
+  width:100%;border:1px solid var(--border);background:rgba(255,255,255,.05);
+  color:#fff;border-radius:12px;padding:12px;font-family:inherit;font-size:14px
+}
+.txt textarea{resize:vertical}
+.num{display:block;margin:12px 0}
+.num span{display:block;margin-bottom:8px;color:#e9ddd5}
+.stepper{display:flex;align-items:center;gap:8px}
+.stepper button{
+  width:38px;height:38px;border-radius:10px;border:1px solid var(--border);
+  background:rgba(255,255,255,.06);color:#fff;font-size:20px;line-height:0
+}
+.stepper button:active{transform:scale(.98)}
 .card--accent{outline:2px solid var(--accent);box-shadow:0 0 0 3px rgba(201,119,40,.25) inset}
-.price-xl{display:flex;align-items:flex-end;gap:8px;margin:6px 0 10px}
-.price-xl span{opacity:.85}
-.price-xl strong{font-size:34px;letter-spacing:.5px}
-.price-xl small{color:var(--muted);margin-left:auto}
+.builder__summary{display:flex;flex-direction:column;gap:10px}
 .hint{color:#cdbfb6;font-size:12px;margin-top:6px}
 
 /* notice & policies */
