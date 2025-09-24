@@ -1,4 +1,4 @@
-// ===== NAV MOBILE =====
+// NAV MOBILE
 const burger = document.getElementById('hamburger');
 const menu = document.getElementById('menu');
 if (burger && menu) {
@@ -9,11 +9,11 @@ if (burger && menu) {
   });
 }
 
-// ===== FOOTER YEAR =====
+// FOOTER YEAR
 const yearEl = document.getElementById('year');
 if (yearEl) yearEl.textContent = new Date().getFullYear();
 
-// ===== SMOOTH SCROLL =====
+// SMOOTH SCROLL + fechar menu no mobile
 document.querySelectorAll('a[href^="#"]').forEach(a => {
   a.addEventListener('click', (e) => {
     const id = a.getAttribute('href');
@@ -27,7 +27,7 @@ document.querySelectorAll('a[href^="#"]').forEach(a => {
   });
 });
 
-// ===== CAROUSEL =====
+// CAROUSEL
 function initCarousel(trackId){
   const track = document.querySelector(trackId);
   if (!track) return;
@@ -47,18 +47,18 @@ function initCarousel(trackId){
 initCarousel('#carousel-ig');
 initCarousel('#carousel-tt');
 
-// ===== BUILDER (SEM PREÇO) =====
+// BUILDER
 const $ = s => document.querySelector(s);
 const form = $('#builderForm');
 const bulletsResumo = $('#bulletsResumo');
 const btnWhats = $('#btnWhats');
 
-// garante que a tecla Enter não submeta o form
+// impedir submit pelo Enter
 form?.addEventListener('keydown', (e) => {
   if (e.key === 'Enter') e.preventDefault();
 });
 
-// Stepper helpers
+// steppers
 function setupStepper(name){
   const minus = document.querySelector(`[data-step="${name}"][data-dir="-"]`);
   const plus  = document.querySelector(`[data-step="${name}"][data-dir="+"]`);
@@ -84,7 +84,7 @@ function checked(name){
   return !!el?.checked;
 }
 function labelEditorial(v){
-  return ({institucional:'Institucional',ofertas:'Ofertas / comercial',autoridade:'Autoridade / conteúdo',eventos:'Eventos / agenda'})[v] || v;
+  return ({institucional:'Institucional',ofertas:'Ofertas e comercial',autoridade:'Autoridade e conteúdo',eventos:'Eventos e agenda'})[v] || v;
 }
 function labelQualidade(v){
   return ({basica:'Básica',intermediaria:'Intermediária',premium:'Premium'})[v] || v;
@@ -93,34 +93,34 @@ function escapeHtml(s){
   return s.replace(/[&<>"']/g, m => ({'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;',"'":'&#39;'}[m]));
 }
 
-// número do Whats limpo (só dígitos)
 const WHATS_NUMBER = '5543988632851';
 
-function buildMsg(payload){
+function buildMsg(p){
   return [
     'Ola Erick, segue meu escopo sob medida:',
-    `- Canais: ${payload.canais.join(', ')}`,
-    `- Volume/semana: ${payload.reelsWeek} reels, ${payload.postsWeek} posts, ${payload.storiesWeek} stories`,
-    `- Estimativa mensal: ${payload.reelsMonth} reels, ${payload.postsMonth} posts, ${payload.storiesMonth} stories`,
-    `- Captação: ${payload.visitsMonth} visita(s)/mês`,
-    `- Fotos tratadas: ${payload.photosMonth}/mês`,
-    `- Linha editorial: ${labelEditorial(payload.editorial)}`,
-    `- Qualidade de edição: ${labelQualidade(payload.quality)}`,
-    payload.notes ? `- Observações: ${payload.notes}` : null,
-    'Aguardo a proposta com contrato mensal (50% na assinatura e 50% no vencimento).'
+    `- Canais: ${p.canais.join(', ')}`,
+    `- Volume por semana: ${p.reelsWeek} reels, ${p.postsWeek} posts, ${p.storiesWeek} stories`,
+    `- Estimativa mensal: ${p.reelsMonth} reels, ${p.postsMonth} posts, ${p.storiesMonth} stories`,
+    `- Captação: ${p.visitsMonth} visita(s) no mês`,
+    `- Fotos tratadas: ${p.photosMonth} no mês`,
+    `- Linha editorial: ${labelEditorial(p.editorial)}`,
+    `- Qualidade de edição: ${labelQualidade(p.quality)}`,
+    p.notes ? `- Observações: ${p.notes}` : null,
+    'Aguardo a proposta com contrato mensal  50 por cento na assinatura e 50 por cento no vencimento.'
   ].filter(Boolean).join('\n');
 }
 
 function update(){
   if (!form) return;
 
-  // canais (garante IG marcado)
   const canais = [
     checked('ig') ? 'Instagram' : null,
     checked('tt') ? 'TikTok' : null,
-    checked('yt') ? 'YouTube (longo)' : null,
+    checked('yt') ? 'YouTube vídeo longo' : null,
     checked('shorts') ? 'YouTube Shorts' : null
   ].filter(Boolean);
+
+  // garante Instagram sempre ativo
   if (!checked('ig')) {
     const igEl = form.querySelector('[name="ig"]');
     if (igEl) igEl.checked = true;
@@ -137,35 +137,32 @@ function update(){
   const quality   = form.querySelector('[name="quality"]')?.value || 'intermediaria';
   const notes     = (form.querySelector('[name="notes"]')?.value || '').trim();
 
-  // aproximação mensal (4.3 semanas)
+  // aproximação mensal de 4.3 semanas
   const reelsMonth   = Math.round(reelsWeek * 4.3);
   const postsMonth   = Math.round(postsWeek * 4.3);
   const storiesMonth = Math.round(storiesWeek * 4.3);
 
   // resumo visual
   bulletsResumo.innerHTML = `
-    <li><b>Canais:</b> ${canais.join(' • ')}</li>
-    <li><b>Reels/semana:</b> ${reelsWeek} • <b>Posts/semana:</b> ${postsWeek} • <b>Stories/semana:</b> ${storiesWeek}</li>
-    <li><b>Estimativa mensal:</b> ${reelsMonth} reels • ${postsMonth} posts • ${storiesMonth} stories</li>
-    <li><b>Captação:</b> ${visitsMonth} visita(s)/mês • <b>Fotos tratadas:</b> ${photosMonth}/mês</li>
-    <li><b>Linha editorial:</b> ${labelEditorial(editorial)} • <b>Edição:</b> ${labelQualidade(quality)}</li>
-    ${notes ? `<li><b>Obs.:</b> ${escapeHtml(notes)}</li>` : ``}
+    <li><b>Canais</b> ${canais.join('  ')}</li>
+    <li><b>Reels por semana</b> ${reelsWeek}  <b>Posts por semana</b> ${postsWeek}  <b>Stories por semana</b> ${storiesWeek}</li>
+    <li><b>Estimativa mensal</b> ${reelsMonth} reels  ${postsMonth} posts  ${storiesMonth} stories</li>
+    <li><b>Captação</b> ${visitsMonth} visita(s) no mês  <b>Fotos tratadas</b> ${photosMonth} no mês</li>
+    <li><b>Linha editorial</b> ${labelEditorial(editorial)}  <b>Edição</b> ${labelQualidade(quality)}</li>
+    ${notes ? `<li><b>Observações</b> ${escapeHtml(notes)}</li>` : ``}
   `;
 
-  // monta link do WhatsApp (sem usar <a href="#"> para evitar refresh)
+  // link do WhatsApp via dataset no botão
   const payload = { canais, reelsWeek, postsWeek, storiesWeek, reelsMonth, postsMonth, storiesMonth, visitsMonth, photosMonth, editorial, quality, notes };
   const msg = encodeURIComponent(buildMsg(payload));
   btnWhats.dataset.href = `https://wa.me/${WHATS_NUMBER}?text=${msg}`;
 }
 
-// abre WhatsApp numa aba nova sem recarregar a página
 btnWhats?.addEventListener('click', (e) => {
   e.preventDefault();
   const link = btnWhats.dataset.href;
-  if (link) {
-    window.open(link, '_blank', 'noopener,noreferrer');
-  }
+  if (link) window.open(link, '_blank', 'noopener,noreferrer');
 });
 
-// init
+// iniciar
 update();
