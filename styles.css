@@ -3,18 +3,17 @@
     margin: 0;
     padding: 0;
     box-sizing: border-box;
-    /* Fonte Poppins importada no HTML */
     font-family: 'Poppins', sans-serif; 
 }
 
 /* Estilo do Corpo: Layout principal, com tudo centralizado */
 body {
-    background-color: #f0f2f5; /* Cor de fundo suave */
+    background-color: #f0f2f5; 
     display: flex;
     flex-direction: column; 
     align-items: center;     
     min-height: 100vh;       
-    padding: 20px;
+    padding: 20px 20px 60px 20px; 
     color: #333;
 }
 
@@ -24,10 +23,10 @@ body {
     flex-direction: column;
     align-items: center;
     width: 100%;
-    max-width: 800px; /* Limita a largura máxima do conteúdo geral */
+    max-width: 900px;
 }
 
-/* Container do Perfil: Onde fica a imagem e os links principais */
+/* Container do Perfil */
 .perfil-container {
     display: flex;
     flex-direction: column; 
@@ -41,7 +40,7 @@ body {
     margin-bottom: 30px; 
 }
 
-/* Estilo da Imagem de Perfil (Redonda e com Borda) */
+/* Estilo da Imagem de Perfil */
 .perfil-imagem {
     width: 120px;          
     height: 120px;
@@ -56,22 +55,11 @@ body {
     transform: scale(1.05); 
 }
 
-/* Estilos de Títulos e Parágrafos */
-h1 {
-    font-size: 2.2em;
-    color: #333;
-    margin-bottom: 5px;
-    font-weight: 700;
-}
+/* Títulos e Parágrafos */
+h1 { font-size: 2.2em; color: #333; margin-bottom: 5px; font-weight: 700; }
+p { color: #666; margin-bottom: 20px; text-align: center; line-height: 1.5; }
 
-p {
-    color: #666;
-    margin-bottom: 20px;
-    text-align: center;
-    line-height: 1.5;
-}
-
-/* Estilo dos Botões/Links */
+/* Estilo dos Botões Principais */
 .link-botao {
     text-decoration: none; 
     width: 100%;
@@ -86,16 +74,13 @@ p {
     transition: background-color 0.3s ease, transform 0.2s; 
 }
 
-/* Efeito Hover nos botões */
 .link-botao:hover {
     background-color: #0056b3;
     transform: translateY(-2px); 
 }
 
-/* Botão secundário para "Conheça Minha História Completa" */
 .link-botao.secondary {
     background-color: #6c757d; 
-    color: white;
     margin-top: 10px; 
 }
 
@@ -104,23 +89,107 @@ p {
     transform: translateY(-2px);
 }
 
+.full-width-link {
+    max-width: 100%; 
+}
 
-/* Seção "Sobre Mim" */
-.section-sobre {
+
+/* SEÇÕES GERAIS (PLANOS, SOBRE, EMBUTIDOS) */
+.section-planos,
+.section-sobre,
+.section-embeds {
     background-color: #ffffff;
-    padding: 40px 20px;
+    padding: 40px 30px;
     margin-top: 30px; 
     border-radius: 12px;
     box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
-    max-width: 800px; 
     width: 100%;
-    text-align: left; 
+    max-width: 900px;
+    text-align: center;
 }
 
-.section-sobre .container-sobre {
-    padding: 0 20px; 
+.section-planos h2,
+.section-embeds h2 {
+    font-size: 2em;
+    color: #007bff;
+    margin-bottom: 10px;
+    font-weight: 700;
 }
 
+.section-planos p {
+    margin-bottom: 30px;
+}
+
+/* GRID DE PLANOS */
+.planos-grid {
+    display: flex;
+    justify-content: center;
+    gap: 30px; 
+    flex-wrap: wrap; 
+}
+
+.card-plano {
+    background-color: #f7f9fc;
+    border-radius: 10px;
+    padding: 30px;
+    width: 100%;
+    max-width: 350px;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.05);
+    text-align: left;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+}
+
+.card-plano h3 {
+    color: #007bff;
+    margin-bottom: 15px;
+    font-size: 1.5em;
+    font-weight: 600;
+    text-align: center;
+}
+
+.card-plano p {
+    color: #444;
+    margin-bottom: 20px;
+    text-align: left;
+}
+
+.card-plano ul {
+    list-style: none;
+    padding: 0;
+    margin-bottom: 25px;
+}
+
+.card-plano li {
+    background: url('data:image/svg+xml;utf8,<svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="%23007bff" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"></polyline></svg>') no-repeat left 5px;
+    padding-left: 25px;
+    margin-bottom: 10px;
+    color: #333;
+    font-size: 0.95em;
+    line-height: 1.4;
+}
+
+.link-botao-card {
+    text-decoration: none; 
+    padding: 12px;
+    background-color: #28a745; 
+    color: white;              
+    text-align: center;
+    border-radius: 8px;
+    font-size: 1em;
+    font-weight: 600;
+    transition: background-color 0.3s ease; 
+    display: block; 
+    margin-top: auto; 
+}
+
+.link-botao-card:hover {
+    background-color: #1e7e34;
+}
+
+
+/* SEÇÃO SOBRE MIM */
 .section-sobre h2 {
     font-size: 2em;
     color: #007bff; 
@@ -155,15 +224,61 @@ p {
     line-height: 1.6;
 }
 
-/* Responsividade para telas menores */
-@media (max-width: 480px) {
-    .perfil-container, .section-sobre {
-        padding: 30px 15px;
+
+/* SEÇÃO DE EMBUTIDOS (INSTAGRAM) */
+.section-embeds {
+    text-align: center;
+}
+
+.embed-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr)); /* 2 a 4 colunas dependendo do tamanho da tela */
+    gap: 20px;
+    margin-bottom: 20px;
+}
+
+.embed-item {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    /* Garante que o embed não ultrapasse o contêiner */
+    width: 100%; 
+    overflow: hidden; 
+}
+
+/* Opcional: Remova o embed-placeholder do CSS quando você colar os códigos reais */
+.embed-placeholder { 
+    width: 100%;
+    height: 400px;
+    background-color: #e9ecef;
+    border-radius: 8px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    color: #6c757d;
+    font-style: italic;
+    border: 1px dashed #adb5bd;
+    text-align: center;
+}
+
+
+/* Responsividade */
+@media (max-width: 768px) {
+    .planos-grid {
+        gap: 20px;
     }
-    h1 {
-        font-size: 1.8em;
+
+    .card-plano {
+        max-width: 100%;
     }
-    .section-sobre h2 {
-        font-size: 1.6em;
+}
+
+@media (max-width: 600px) {
+    .embed-grid {
+        grid-template-columns: 1fr; /* Coluna única em telas pequenas */
+    }
+    .embed-item {
+        max-width: 350px;
+        margin: 0 auto; /* Centraliza a coluna única */
     }
 }
