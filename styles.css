@@ -320,7 +320,7 @@ header {
     border: 1px solid rgba(0, 123, 255, 0.1);
     transition: box-shadow 0.3s ease-in-out, transform 0.3s;
     /* Altura Mínima para os embeds caberem */
-    min-height: 600px; 
+    min-height: 600px;	
     display: flex;
     flex-direction: column;
     justify-content: space-between;
@@ -352,7 +352,7 @@ header {
     align-items: center;
     /* Reseta a margem/largura definida no código do Instagram para o container */
     & blockquote {
-        margin: 0 auto !important; 
+        margin: 0 auto !important;	
         max-width: 100% !important;
         min-width: 100% !important;
         width: 100% !important;
@@ -557,7 +557,7 @@ footer p {
 
     /* Garante que o embed se ajuste ao container em mobile */
     .media-item {
-        min-height: auto; 
+        min-height: auto;	
     }
 }
 
