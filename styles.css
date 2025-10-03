@@ -1,0 +1,169 @@
+/* Reset Básico para melhor consistência */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    /* Fonte Poppins importada no HTML */
+    font-family: 'Poppins', sans-serif; 
+}
+
+/* Estilo do Corpo: Layout principal, com tudo centralizado */
+body {
+    background-color: #f0f2f5; /* Cor de fundo suave */
+    display: flex;
+    flex-direction: column; 
+    align-items: center;     
+    min-height: 100vh;       
+    padding: 20px;
+    color: #333;
+}
+
+/* Wrapper para organizar as seções principais */
+.main-hero {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    width: 100%;
+    max-width: 800px; /* Limita a largura máxima do conteúdo geral */
+}
+
+/* Container do Perfil: Onde fica a imagem e os links principais */
+.perfil-container {
+    display: flex;
+    flex-direction: column; 
+    align-items: center;    
+    max-width: 400px;       
+    width: 100%;
+    padding: 40px 20px;
+    background-color: #ffffff; 
+    border-radius: 12px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    margin-bottom: 30px; 
+}
+
+/* Estilo da Imagem de Perfil (Redonda e com Borda) */
+.perfil-imagem {
+    width: 120px;          
+    height: 120px;
+    border-radius: 50%;    
+    object-fit: cover;     
+    margin-bottom: 20px;
+    border: 4px solid #007bff; 
+    transition: transform 0.3s ease; 
+}
+
+.perfil-imagem:hover {
+    transform: scale(1.05); 
+}
+
+/* Estilos de Títulos e Parágrafos */
+h1 {
+    font-size: 2.2em;
+    color: #333;
+    margin-bottom: 5px;
+    font-weight: 700;
+}
+
+p {
+    color: #666;
+    margin-bottom: 20px;
+    text-align: center;
+    line-height: 1.5;
+}
+
+/* Estilo dos Botões/Links */
+.link-botao {
+    text-decoration: none; 
+    width: 100%;
+    padding: 15px;
+    margin-bottom: 15px;
+    background-color: #007bff; 
+    color: white;              
+    text-align: center;
+    border-radius: 8px;
+    font-size: 1em;
+    font-weight: 600;
+    transition: background-color 0.3s ease, transform 0.2s; 
+}
+
+/* Efeito Hover nos botões */
+.link-botao:hover {
+    background-color: #0056b3;
+    transform: translateY(-2px); 
+}
+
+/* Botão secundário para "Conheça Minha História Completa" */
+.link-botao.secondary {
+    background-color: #6c757d; 
+    color: white;
+    margin-top: 10px; 
+}
+
+.link-botao.secondary:hover {
+    background-color: #5a6268;
+    transform: translateY(-2px);
+}
+
+
+/* Seção "Sobre Mim" */
+.section-sobre {
+    background-color: #ffffff;
+    padding: 40px 20px;
+    margin-top: 30px; 
+    border-radius: 12px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    max-width: 800px; 
+    width: 100%;
+    text-align: left; 
+}
+
+.section-sobre .container-sobre {
+    padding: 0 20px; 
+}
+
+.section-sobre h2 {
+    font-size: 2em;
+    color: #007bff; 
+    margin-bottom: 25px;
+    text-align: center;
+    font-weight: 700;
+}
+
+.section-sobre h3 {
+    font-size: 1.4em;
+    color: #333;
+    margin-top: 30px;
+    margin-bottom: 15px;
+    font-weight: 600;
+}
+
+.section-sobre p {
+    margin-bottom: 15px;
+    color: #444;
+    text-align: left; 
+}
+
+.section-sobre ul,
+.section-sobre ol {
+    margin-left: 20px;
+    margin-bottom: 20px;
+    color: #444;
+}
+
+.section-sobre li {
+    margin-bottom: 10px;
+    line-height: 1.6;
+}
+
+/* Responsividade para telas menores */
+@media (max-width: 480px) {
+    .perfil-container, .section-sobre {
+        padding: 30px 15px;
+    }
+    h1 {
+        font-size: 1.8em;
+    }
+    .section-sobre h2 {
+        font-size: 1.6em;
+    }
+}
