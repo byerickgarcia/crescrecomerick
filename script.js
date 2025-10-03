@@ -40,12 +40,12 @@ document.addEventListener('DOMContentLoaded', () => {
     form.addEventListener('submit', function(event) {
         event.preventDefault(); // Impede o envio padrão do formulário
 
-        // Em um projeto real, você faria uma requisição AJAX para um endpoint
-        // (ex: um serviço de e-mail marketing, planilha, ou backend customizado)
+        // NOTA: Em um projeto real, você faria uma requisição AJAX (Fetch API) 
+        // para um endpoint de backend ou serviço de e-mail marketing aqui.
 
-        // Simulação de Sucesso no Envio (ajustar para lógica real)
+        // Simulação de Sucesso no Envio
         formMessage.textContent = 'Agendamento Recebido com Sucesso! Em breve entrarei em contato via WhatsApp.';
-        formMessage.style.color = 'var(--color-secondary)';
+        formMessage.style.color = 'var(--color-secondary)'; // Usando a cor de destaque do CSS
         formMessage.style.display = 'block';
 
         // Limpa o formulário
